@@ -17,6 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.register.RegisterActivity">
+        </activity>
+        <activity android:name=".ui.chooserole.ChooseRoleActivity">
+        </activity>
     </application>
 
 </manifest>
