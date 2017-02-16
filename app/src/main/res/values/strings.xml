@@ -10,4 +10,6 @@
     <string name="user_info">账号信息</string>
     <string name="personal_volunteer">个人志愿者</string>
     <string name="volunteer_group">志愿者团体</string>
+    <string name="hangzhou">杭州</string>
+    <string name="m_volunteer">美志愿</string>
 </resources>
