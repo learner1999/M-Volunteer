@@ -16,4 +16,5 @@
     <string name="please_input_interested_activity">请输入感兴趣的活动</string>
     <string name="search_history">&#160;&#160;搜索历史</string>
     <string name="clear_search_history">清除搜索历史</string>
+    <string name="sign_in">签到</string>
 </resources>

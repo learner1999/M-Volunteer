@@ -14,6 +14,7 @@ import java.util.List;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.ui.home.HomeFragment;
 import cn.zheteng123.m_volunteer.ui.main.adapter.ViewPagerAdapter;
+import cn.zheteng123.m_volunteer.ui.signin.SignInFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        mHomeFragment = new HomeFragment();
-        mFragmentList.add(mHomeFragment);
+        // mHomeFragment = new HomeFragment();
+        // mFragmentList.add(mHomeFragment);
+        SignInFragment signInFragment = new SignInFragment();
+        mFragmentList.add(signInFragment);
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mFragmentList);
 
