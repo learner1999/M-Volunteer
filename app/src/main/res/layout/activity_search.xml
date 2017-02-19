@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_search"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.zheteng123.m_volunteer.ui.search.SearchActivity"
+    android:orientation="vertical">
+
+    <!--标题栏开始-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/v_status_bar_fix"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/left"/>
+
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="260dp"
+                android:layout_height="30dp"
+                android:hint="@string/please_input_interested_activity"
+                android:background="@drawable/shape_edit_text_radius"
+                android:layout_centerInParent="true"
+                android:textSize="13sp"
+                android:paddingStart="5dp"
+                android:paddingLeft="5dp"
+                android:paddingEnd="5dp"
+                android:paddingRight="5dp"
+                android:inputType="text"
+                android:maxLines="1"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/search"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:background="@null"
+                android:layout_toRightOf="@id/et_search"
+                android:layout_toEndOf="@id/et_search"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <!--标题栏结束-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:drawableLeft="@drawable/history"
+        android:drawableStart="@drawable/history"
+        android:text="@string/search_history"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/clear_search_history"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_button_border_radius"/>
+
+</LinearLayout>

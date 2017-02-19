@@ -13,7 +13,7 @@ import java.util.List;
 
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.ui.home.HomeFragment;
-import cn.zheteng123.m_volunteer.ui.adapter.ViewPagerAdapter;
+import cn.zheteng123.m_volunteer.ui.main.adapter.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

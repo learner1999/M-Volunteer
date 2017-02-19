@@ -3,18 +3,25 @@ package cn.zheteng123.m_volunteer.ui.home;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.R;
+import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
+import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
 
 /**
@@ -26,6 +33,12 @@ public class HomeFragment extends Fragment {
 
     @BindView(R.id.roll_pager_view)
     RollPagerView mRollPagerView;
+
+    @BindView(R.id.lv_home_activity)
+    ListView mLvActivity;
+
+    @BindView(R.id.swipe_refresh)
+    SwipeRefreshLayout mSrl;
 
     @Nullable
     @Override
@@ -64,6 +77,27 @@ public class HomeFragment extends Fragment {
             @Override
             public int getCount() {
                 return imgs.length;
+            }
+        });
+
+        // 设置 ListView
+        List<HomeActivityEntity> homeActivityList = new ArrayList<>();
+        HomeActivityEntity homeActivityEntity = new HomeActivityEntity();
+        homeActivityEntity.setTitle("这是一个什么活动呢");
+        homeActivityEntity.setDistance(20);
+        homeActivityEntity.setDistrict("西湖区");
+        homeActivityEntity.setEnrollNum(2);
+        homeActivityEntity.setTotalNum(11);
+        homeActivityList.add(homeActivityEntity);
+        HomeActivityAdapter homeActivityAdapter = new HomeActivityAdapter(getActivity(), homeActivityList);
+        mLvActivity.setAdapter(homeActivityAdapter);
+
+        // 设置下拉刷新
+        mSrl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // 刷新数据
+                mSrl.setRefreshing(false);
             }
         });
 

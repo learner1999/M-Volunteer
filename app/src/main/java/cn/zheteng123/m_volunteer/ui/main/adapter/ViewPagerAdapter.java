@@ -1,4 +1,4 @@
-package cn.zheteng123.m_volunteer.ui.adapter;
+package cn.zheteng123.m_volunteer.ui.main.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
