@@ -17,4 +17,6 @@
     <string name="search_history">&#160;&#160;搜索历史</string>
     <string name="clear_search_history">清除搜索历史</string>
     <string name="sign_in">签到</string>
+    <string name="please_input_activity_code">请输入活动编码</string>
+    <string name="code_is_six_digits_from_activity_publisher">编码为6位数字 由活动发布者告知</string>
 </resources>

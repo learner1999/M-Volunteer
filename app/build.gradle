@@ -31,4 +31,5 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.jude:rollviewpager:1.4.6'
     compile 'com.android.support:recyclerview-v7:25.1.0'
+    compile files('libs/BaiduLBS_Android.jar')
 }
