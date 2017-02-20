@@ -2,7 +2,6 @@ package cn.zheteng123.m_volunteer.ui.signin;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,7 +10,9 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -152,7 +153,7 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
         option.setLocationNotify(false);
         //可选，默认false，设置是否当GPS有效时按照1S/1次频率输出GPS结果
 
-        option.setIsNeedLocationDescribe(false);
+        option.setIsNeedLocationDescribe(true);
         //可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
 
         option.setIsNeedLocationPoiList(false);
@@ -176,6 +177,8 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
         double latitude = bdLocation.getLatitude();
         double longitude = bdLocation.getLongitude();
 
+        final String locationDescribe = bdLocation.getLocationDescribe();
+
         // Toast.makeText(getActivity(), latitude + " " + longitude, Toast.LENGTH_SHORT).show();
 
         // 移动地图至当前位置
@@ -192,23 +195,7 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                //创建InfoWindow展示的view
-                Button button = new Button(getActivity().getApplicationContext());
-                button.setText("点击签到");
-                button.setTextColor(Color.rgb(255, 255, 255));
-                button.setBackgroundColor(Color.argb(50, 0, 255, 0));
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Button button = new Button(getActivity().getApplicationContext());
-                        button.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-                        mBaiduMap.showInfoWindow(new InfoWindow(button, ll, 0));
-                    }
-                });
-                //创建InfoWindow , 传入 view， 地理坐标， y 轴偏移量
-                InfoWindow mInfoWindow = new InfoWindow(button, ll, -47);
-                //显示InfoWindow
-                mBaiduMap.showInfoWindow(mInfoWindow);
+                showSignInDialog(locationDescribe, ll);
             }
         });
 
@@ -266,5 +253,35 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
         } else {
             mLocationClient.start();
         }
+    }
+
+    private void showSignInDialog(final String locationDescribe, final LatLng ll) {
+        //创建InfoWindow展示的view
+        View view = getActivity().getLayoutInflater().inflate(R.layout.map_sign_in, null, false);
+        Button button = (Button) view.findViewById(R.id.btn_sign_in);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInputCodeDialog(locationDescribe, ll);
+            }
+        });
+        TextView tvLocation = (TextView) view.findViewById(R.id.tv_location);
+        tvLocation.setText(locationDescribe);
+        //创建InfoWindow , 传入 view， 地理坐标， y 轴偏移量
+        InfoWindow mInfoWindow = new InfoWindow(view, ll, 0);
+        //显示InfoWindow
+        mBaiduMap.showInfoWindow(mInfoWindow);
+    }
+
+    private void showInputCodeDialog(final String locationDescribe, final LatLng ll) {
+        View view = getActivity().getLayoutInflater().inflate(R.layout.map_input_code, null, false);
+        ImageView ivClose = (ImageView) view.findViewById(R.id.iv_close);
+        ivClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showSignInDialog(locationDescribe, ll);
+            }
+        });
+        mBaiduMap.showInfoWindow(new InfoWindow(view, ll, 0));
     }
 }
