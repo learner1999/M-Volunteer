@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/icon_home"
+        title="首页" />
+    <tab
+        id="@+id/tab_group"
+        icon="@drawable/icon_group"
+        title="群组" />
+    <tab
+        id="@+id/tab_sign_in"
+        icon="@drawable/icon_sign_in"
+        title="签到" />
+    <tab
+        id="@+id/tab_circle"
+        icon="@drawable/icon_circle"
+        title="圈子" />
+    <tab
+        id="@+id/tab_ranking_list"
+        icon="@drawable/icon_ranking_list"
+        title="榜单" />
+</tabs>

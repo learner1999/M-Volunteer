@@ -32,4 +32,6 @@ dependencies {
     compile 'com.jude:rollviewpager:1.4.6'
     compile 'com.android.support:recyclerview-v7:25.1.0'
     compile files('libs/BaiduLBS_Android.jar')
+
+    compile 'com.roughike:bottom-bar:2.1.1'
 }
