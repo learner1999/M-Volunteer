@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cn.zheteng123.m_volunteer.ui.main.MainActivity">
+    tools:context="cn.zheteng123.m_volunteer.ui.main.MainActivity"
+    android:orientation="vertical">
 
-    <android.support.v4.view.ViewPager
+    <cn.zheteng123.m_volunteer.customview.MyViewPager
         android:id="@+id/vp_page"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
     <com.roughike.bottombar.BottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
         app:bb_tabXmlResource="@xml/bottombar_tabs" />
 
-</RelativeLayout>
+</LinearLayout>
