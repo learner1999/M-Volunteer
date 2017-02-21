@@ -133,7 +133,7 @@
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_gravity="center_horizontal"
-                                android:background="@drawable/shape_circle_image_pink"
+                                android:background="@drawable/shape_circle_image_grey"
                                 android:scaleType="centerInside"
                                 android:src="@drawable/disabled_person"/>
 
@@ -152,11 +152,13 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@mipmap/ic_launcher"/>
+                                android:background="@drawable/shape_circle_image_green"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_money"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -173,11 +175,13 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@mipmap/ic_launcher"/>
+                                android:background="@drawable/shape_circle_image_blue"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_civilization"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -201,11 +205,13 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@mipmap/ic_launcher"/>
+                                android:background="@drawable/shape_circle_image_orange"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_heart"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -222,11 +228,13 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@mipmap/ic_launcher"/>
+                                android:background="@drawable/shape_circle_image_blue"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_environment"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -243,11 +251,13 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@mipmap/ic_launcher"/>
+                                android:background="@drawable/shape_circle_image_grey"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_culture"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -264,11 +274,13 @@
                             android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@mipmap/ic_launcher"/>
+                                android:background="@drawable/shape_circle_image_orange"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_convenient"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
