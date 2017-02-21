@@ -1,9 +1,14 @@
 package cn.zheteng123.m_volunteer.api;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import cn.zheteng123.m_volunteer.BuildConfig;
+import cn.zheteng123.m_volunteer.util.LoginInfo;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -25,6 +30,8 @@ public class Networks {
 
     private static SearchApi mSearchApi;
 
+    private static LoginApi mLoginApi;
+
     public static Networks getInstance() {
         if (mNetworks == null) {
             mNetworks = new Networks();
@@ -36,8 +43,12 @@ public class Networks {
         return mActivityApi == null ? configRetrofit(ActivityApi.class) : mActivityApi;
     }
 
-    public SearchApi getSearchApiApi() {
+    public SearchApi getSearchApi() {
         return mSearchApi == null ? configRetrofit(SearchApi.class) : mSearchApi;
+    }
+
+    public LoginApi getLoginApi() {
+        return mLoginApi == null ? configRetrofit(LoginApi.class) : mLoginApi;
     }
 
     private <T> T configRetrofit(Class<T> service) {
@@ -51,8 +62,22 @@ public class Networks {
     }
 
     private OkHttpClient configClient() {
+        final Interceptor tokenInterceptor = new Interceptor() {
+            @Override
+            public Response intercept(Chain chain) throws IOException {
+                Request original = chain.request();
+
+                // Request customization: add request headers
+                Request.Builder requestBuilder = original.newBuilder()
+                        .addHeader("Bearer", LoginInfo.token);
+
+                Request request = requestBuilder.build();
+                return chain.proceed(request);
+            }
+        };
         OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
+                .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                .addInterceptor(tokenInterceptor);
         return okHttpClient.build();
     }
 }
