@@ -34,4 +34,5 @@ dependencies {
     compile files('libs/BaiduLBS_Android.jar')
 
     compile 'com.roughike:bottom-bar:2.1.1'
+    compile 'com.zaaach:citypicker:1.1'
 }

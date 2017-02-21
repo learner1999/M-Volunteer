@@ -1,5 +1,6 @@
 package cn.zheteng123.m_volunteer.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,9 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.adapter.StaticPagerAdapter;
+import com.zaaach.citypicker.CityPickerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +23,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.R;
-import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
 import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
+import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
+import cn.zheteng123.m_volunteer.ui.search.SearchActivity;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Created on 2017/2/12.
@@ -30,6 +36,8 @@ import cn.zheteng123.m_volunteer.util.WindowAttr;
 
 
 public class HomeFragment extends Fragment {
+
+    private static final int REQUEST_CODE_PICK_CITY = 0;
 
     @BindView(R.id.roll_pager_view)
     RollPagerView mRollPagerView;
@@ -39,6 +47,12 @@ public class HomeFragment extends Fragment {
 
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout mSrl;
+
+    @BindView(R.id.tv_city)
+    TextView mTvCity;
+
+    @BindView(R.id.iv_search)
+    ImageView mIvSearch;
 
     @Nullable
     @Override
@@ -101,6 +115,34 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        // 设置城市选择器
+        mTvCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(getActivity(), CityPickerActivity.class),
+                        REQUEST_CODE_PICK_CITY);
+
+            }
+        });
+
+        // 设置搜索
+        mIvSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), SearchActivity.class));
+            }
+        });
+
         return view;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_CODE_PICK_CITY && resultCode == RESULT_OK){
+            if (data != null){
+                String city = data.getStringExtra(CityPickerActivity.KEY_PICKED_CITY);
+                mTvCity.setText(city);
+            }
+        }
     }
 }
