@@ -298,7 +298,7 @@
                 <!--分类导航结束-->
 
                 <!--活动推荐列表开始-->
-                <ListView
+                <cn.zheteng123.m_volunteer.customview.ListViewForScrollView
                     android:id="@+id/lv_home_activity"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>

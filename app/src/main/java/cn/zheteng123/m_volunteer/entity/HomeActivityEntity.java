@@ -1,5 +1,7 @@
 package cn.zheteng123.m_volunteer.entity;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created on 2017/2/17.
  */
@@ -7,11 +9,28 @@ package cn.zheteng123.m_volunteer.entity;
 
 public class HomeActivityEntity {
 
+    private int id;  // 活动id
+
+    @SerializedName("name")
     private String title;  // 活动名称
     private double distance;  // 活动地点与当前所处位置的距离
     private String district;  // 活动所处地区
+
+    @SerializedName("recruitedPersonNumber")
     private int enrollNum;  // 已报名人数
+
+    @SerializedName("recruitPersonNumber")
     private int TotalNum;  // 总人数
+
+    private String picture;  // 图片地址
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -51,5 +70,13 @@ public class HomeActivityEntity {
 
     public void setTotalNum(int totalNum) {
         TotalNum = totalNum;
+    }
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

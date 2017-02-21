@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,10 +24,16 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.R;
+import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
+import cn.zheteng123.m_volunteer.entity.PageInfo;
+import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
 import cn.zheteng123.m_volunteer.ui.search.SearchActivity;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -37,7 +44,12 @@ import static android.app.Activity.RESULT_OK;
 
 public class HomeFragment extends Fragment {
 
+    private static final String TAG = "HomeFragment";
+
     private static final int REQUEST_CODE_PICK_CITY = 0;
+
+    List<HomeActivityEntity> mHomeActivityList = new ArrayList<>();
+    HomeActivityAdapter mHomeActivityAdapter;
 
     @BindView(R.id.roll_pager_view)
     RollPagerView mRollPagerView;
@@ -95,16 +107,8 @@ public class HomeFragment extends Fragment {
         });
 
         // 设置 ListView
-        List<HomeActivityEntity> homeActivityList = new ArrayList<>();
-        HomeActivityEntity homeActivityEntity = new HomeActivityEntity();
-        homeActivityEntity.setTitle("这是一个什么活动呢");
-        homeActivityEntity.setDistance(20);
-        homeActivityEntity.setDistrict("西湖区");
-        homeActivityEntity.setEnrollNum(2);
-        homeActivityEntity.setTotalNum(11);
-        homeActivityList.add(homeActivityEntity);
-        HomeActivityAdapter homeActivityAdapter = new HomeActivityAdapter(getActivity(), homeActivityList);
-        mLvActivity.setAdapter(homeActivityAdapter);
+        mHomeActivityAdapter = new HomeActivityAdapter(getActivity(), mHomeActivityList);
+        mLvActivity.setAdapter(mHomeActivityAdapter);
 
         // 设置下拉刷新
         mSrl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -132,6 +136,32 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(), SearchActivity.class));
             }
         });
+
+        Networks
+                .getInstance()
+                .getActivityApi()
+                .getHomeActivity(120, 30, 1, 10)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Result<PageInfo<HomeActivityEntity>>>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "onCompleted: ");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, "onError: " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(Result<PageInfo<HomeActivityEntity>> result) {
+                        Log.d(TAG, "onNext: ok");
+                        mHomeActivityList.clear();
+                        mHomeActivityList.addAll(result.getData().getList());
+                        mHomeActivityAdapter.notifyDataSetChanged();
+                    }
+                });
 
         return view;
     }
