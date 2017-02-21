@@ -23,6 +23,8 @@ public class Networks {
 
     private static ActivityApi mActivityApi;
 
+    private static SearchApi mSearchApi;
+
     public static Networks getInstance() {
         if (mNetworks == null) {
             mNetworks = new Networks();
@@ -32,6 +34,10 @@ public class Networks {
 
     public ActivityApi getActivityApi() {
         return mActivityApi == null ? configRetrofit(ActivityApi.class) : mActivityApi;
+    }
+
+    public SearchApi getSearchApiApi() {
+        return mSearchApi == null ? configRetrofit(SearchApi.class) : mSearchApi;
     }
 
     private <T> T configRetrofit(Class<T> service) {
