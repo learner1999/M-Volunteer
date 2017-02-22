@@ -7,9 +7,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -33,8 +37,13 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.R;
+import cn.zheteng123.m_volunteer.api.Networks;
+import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.mvpframe.base.BaseFrameFragment;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created on 2017/2/19.
@@ -280,6 +289,48 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
             @Override
             public void onClick(View v) {
                 showSignInDialog(locationDescribe, ll);
+            }
+        });
+        EditText etCode = (EditText) view.findViewById(R.id.et_code);
+        etCode.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 6) {
+                    Networks
+                            .getInstance()
+                            .getSignInApi()
+                            .signIn(Integer.parseInt(s.toString()))
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Observer<Result<String>>() {
+                                @Override
+                                public void onCompleted() {
+
+                                }
+
+                                @Override
+                                public void onError(Throwable e) {
+                                    Log.d("SignInFragment", "onNext: " + e.getMessage());
+                                }
+
+                                @Override
+                                public void onNext(Result<String> voidResult) {
+                                    Log.d("SignInFragment", "onNext: 签到成功");
+
+                                }
+                            });
+
+                }
             }
         });
         mBaiduMap.showInfoWindow(new InfoWindow(view, ll, 0));

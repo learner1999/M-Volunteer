@@ -32,6 +32,8 @@ public class Networks {
 
     private static LoginApi mLoginApi;
 
+    private static SignInApi mSignInApi;
+
     public static Networks getInstance() {
         if (mNetworks == null) {
             mNetworks = new Networks();
@@ -49,6 +51,10 @@ public class Networks {
 
     public LoginApi getLoginApi() {
         return mLoginApi == null ? configRetrofit(LoginApi.class) : mLoginApi;
+    }
+
+    public SignInApi getSignInApi() {
+        return mSignInApi == null ? configRetrofit(SignInApi.class) : mSignInApi;
     }
 
     private <T> T configRetrofit(Class<T> service) {
@@ -69,7 +75,7 @@ public class Networks {
 
                 // Request customization: add request headers
                 Request.Builder requestBuilder = original.newBuilder()
-                        .addHeader("Bearer", LoginInfo.token);
+                        .addHeader("Authorization", "Bearer " + LoginInfo.token);
 
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
