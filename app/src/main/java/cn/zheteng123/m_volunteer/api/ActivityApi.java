@@ -22,4 +22,15 @@ public interface ActivityApi {
             @Query("rows") int rows
     );
 
+    @GET("api/activity/category")
+    Observable<Result<PageInfo<HomeActivityEntity>>> getActivityByParam(
+            @Query("coordLong") double lon,
+            @Query("coordLat") double lat,
+            @Query("page") int page,
+            @Query("rows") int rows,
+            @Query("category") String category,
+            @Query("collation") int collation,
+            @Query("district") String district
+    );
+
 }

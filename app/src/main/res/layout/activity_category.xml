@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="全部"
+                android:text="全市"
                 android:textSize="14dp"/>
 
             <ImageView
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="综合排序"
+                android:text="全部类型"
                 android:textSize="14dp"/>
 
             <ImageView
@@ -124,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="优惠活动"
+                android:text="最近发布"
                 android:textSize="14dp"/>
 
             <ImageView

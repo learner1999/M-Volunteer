@@ -23,11 +23,13 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
 import cn.zheteng123.m_volunteer.entity.PageInfo;
 import cn.zheteng123.m_volunteer.entity.Result;
+import cn.zheteng123.m_volunteer.ui.activity_category.CategoryActivity;
 import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
 import cn.zheteng123.m_volunteer.ui.search.SearchActivity;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
@@ -36,6 +38,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 import static android.app.Activity.RESULT_OK;
+import static cn.zheteng123.m_volunteer.R.id.ll_category1;
 
 /**
  * Created on 2017/2/12.
@@ -140,7 +143,7 @@ public class HomeFragment extends Fragment {
         Networks
                 .getInstance()
                 .getActivityApi()
-                .getHomeActivity(120, 30, 1, 10)
+                .getHomeActivity(120, 30, 1, 10) // TODO: 2017/2/22 定位
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Result<PageInfo<HomeActivityEntity>>>() {
@@ -174,5 +177,49 @@ public class HomeFragment extends Fragment {
                 mTvCity.setText(city);
             }
         }
+    }
+
+    @OnClick({R.id.ll_category1, R.id.ll_category2, R.id.ll_category3, R.id.ll_category4,
+            R.id.ll_category5, R.id.ll_category6, R.id.ll_category7, R.id.ll_category8})
+    public void onClick_Event(View v) {
+        String[] categorys = new String[]{"全部类型", "青少年服务", "敬老助残", "扶贫帮困",
+                "文明礼仪", "平安守护", "环境保护", "文化体育", "便民服务"};
+
+        Intent intent = new Intent(getActivity(), CategoryActivity.class);
+
+        switch (v.getId()) {
+            case ll_category1:
+                intent.putExtra("category", categorys[1]);
+                break;
+
+            case R.id.ll_category2:
+                intent.putExtra("category", categorys[2]);
+                break;
+
+            case R.id.ll_category3:
+                intent.putExtra("category", categorys[3]);
+                break;
+
+            case R.id.ll_category4:
+                intent.putExtra("category", categorys[4]);
+                break;
+
+            case R.id.ll_category5:
+                intent.putExtra("category", categorys[5]);
+                break;
+
+            case R.id.ll_category6:
+                intent.putExtra("category", categorys[6]);
+                break;
+
+            case R.id.ll_category7:
+                intent.putExtra("category", categorys[7]);
+                break;
+
+            case R.id.ll_category8:
+                intent.putExtra("category", categorys[8]);
+                break;
+        }
+        startActivity(intent);
     }
 }

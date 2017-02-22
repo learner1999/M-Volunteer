@@ -6,6 +6,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,36 +16,57 @@ import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.R;
+import cn.zheteng123.m_volunteer.api.Networks;
+import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
+import cn.zheteng123.m_volunteer.entity.PageInfo;
+import cn.zheteng123.m_volunteer.entity.Result;
+import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class CategoryActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ListView listView, popListView;
+    private static final String TAG = "CategoryActivity";
+
+    private ListView popListView;
     private ProgressBar progressBar;
     private List<Map<String, String>> menuData1, menuData2, menuData3;
     private PopupWindow popMenu;
     private SimpleAdapter menuAdapter1, menuAdapter2, menuAdapter3;
 
     private LinearLayout product, sort, activity;
-    private TextView productTv, sortTv, activityTv;
+    private TextView districtTv, categoryTv, collationTv;
 
-    private String currentProduct, currentSort, currentActivity;
+    private String currentDistrict, currentCategory, currentCollation;
     private int menuIndex = 0;
 
-    private Intent intent;
+    private int mPageNow = 1, mPageSize = 10;
+    private String mCategory;
+    private String mDistrict;
+    private int mCollation = 0;
+
+    List<HomeActivityEntity> mHomeActivityList = new ArrayList<>();
+    HomeActivityAdapter mHomeActivityAdapter;
+
+    @BindView(R.id.lv_category_activity)
+    ListView mLvActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        ButterKnife.bind(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             View decorView = getWindow().getDecorView();
@@ -62,9 +84,17 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                         WindowAttr.getStatusBarHeight(this))
         );
 
-        findView();
+        Intent intent = getIntent();
+        mCategory = intent.getStringExtra("category");
+
+        initPopView();
         initMenuData();
         initPopMenu();
+
+        // 设置 ListView
+        mHomeActivityAdapter = new HomeActivityAdapter(this, mHomeActivityList);
+        mLvActivity.setAdapter(mHomeActivityAdapter);
+        getActivityList();
     }
 
     private void initMenuData() {
@@ -103,19 +133,19 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.supplier_list_product:
-                productTv.setTextColor(Color.parseColor("#39ac69"));
+                districtTv.setTextColor(Color.parseColor("#39ac69"));
                 popListView.setAdapter(menuAdapter1);
                 popMenu.showAsDropDown(product, 0, 2);
                 menuIndex = 0;
                 break;
             case R.id.supplier_list_sort:
-                sortTv.setTextColor(Color.parseColor("#39ac69"));
+                categoryTv.setTextColor(Color.parseColor("#39ac69"));
                 popListView.setAdapter(menuAdapter2);
                 popMenu.showAsDropDown(product, 0, 2);
                 menuIndex = 1;
                 break;
             case R.id.supplier_list_activity:
-                activityTv.setTextColor(Color.parseColor("#39ac69"));
+                collationTv.setTextColor(Color.parseColor("#39ac69"));
                 popListView.setAdapter(menuAdapter3);
                 popMenu.showAsDropDown(product, 0, 2);
                 menuIndex = 2;
@@ -123,14 +153,13 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    protected void findView() {
-        listView = (ListView) findViewById(R.id.supplier_list_lv);
+    protected void initPopView() {
         product = (LinearLayout) findViewById(R.id.supplier_list_product);
         sort = (LinearLayout) findViewById(R.id.supplier_list_sort);
         activity = (LinearLayout) findViewById(R.id.supplier_list_activity);
-        productTv = (TextView) findViewById(R.id.supplier_list_product_tv);
-        sortTv = (TextView) findViewById(R.id.supplier_list_sort_tv);
-        activityTv = (TextView) findViewById(R.id.supplier_list_activity_tv);
+        districtTv = (TextView) findViewById(R.id.supplier_list_product_tv);
+        categoryTv = (TextView) findViewById(R.id.supplier_list_sort_tv);
+        collationTv = (TextView) findViewById(R.id.supplier_list_activity_tv);
         progressBar = (ProgressBar) findViewById(R.id.progress);
 
         product.setOnClickListener(this);
@@ -151,9 +180,9 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         popMenu.setAnimationStyle(R.style.popwin_anim_style);
         popMenu.setOnDismissListener(new PopupWindow.OnDismissListener() {
             public void onDismiss() {
-                productTv.setTextColor(Color.parseColor("#5a5959"));
-                sortTv.setTextColor(Color.parseColor("#5a5959"));
-                activityTv.setTextColor(Color.parseColor("#5a5959"));
+                districtTv.setTextColor(Color.parseColor("#5a5959"));
+                categoryTv.setTextColor(Color.parseColor("#5a5959"));
+                collationTv.setTextColor(Color.parseColor("#5a5959"));
             }
         });
 
@@ -180,19 +209,58 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                                     long arg3) {
                 popMenu.dismiss();
                 if (menuIndex == 0) {
-                    currentProduct = menuData1.get(pos).get("name");
-                    productTv.setText(currentProduct);
-                    Toast.makeText(CategoryActivity.this, currentProduct, Toast.LENGTH_SHORT).show();
+                    mDistrict = currentDistrict = menuData1.get(pos).get("name");
+                    districtTv.setText(currentDistrict);
+                    if (currentDistrict.equals("全市")) {
+                        mDistrict = null;
+                    }
+                    getActivityList();
                 } else if (menuIndex == 1) {
-                    currentSort = menuData2.get(pos).get("name");
-                    sortTv.setText(currentSort);
-                    Toast.makeText(CategoryActivity.this, currentSort, Toast.LENGTH_SHORT).show();
+                    mCategory = currentCategory = menuData2.get(pos).get("name");
+                    categoryTv.setText(currentCategory);
+                    if (currentCategory.equals("全部类型")) {
+                        mCategory = null;
+                    }
+                    getActivityList();
                 } else {
-                    currentActivity = menuData3.get(pos).get("name");
-                    activityTv.setText(currentActivity);
-                    Toast.makeText(CategoryActivity.this, currentActivity, Toast.LENGTH_SHORT).show();
+                    currentCollation = menuData3.get(pos).get("name");
+                    collationTv.setText(currentCollation);
+                    if (currentCollation.equals("最新发布")) {
+                        mCollation = 0;
+                    } else {
+                        mCollation = 1;
+                    }
+                    getActivityList();
                 }
             }
         });
+    }
+
+    private void getActivityList() {
+        Networks
+                .getInstance()
+                .getActivityApi()
+                .getActivityByParam(120, 30, mPageNow, mPageSize, mCategory, mCollation, mDistrict)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Result<PageInfo<HomeActivityEntity>>>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, "onError: " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onNext(Result<PageInfo<HomeActivityEntity>> pageInfoResult) {
+                        Log.d(TAG, "onNext: ");
+                        mHomeActivityList.clear();
+                        mHomeActivityList.addAll(pageInfoResult.getData().getList());
+                        mHomeActivityAdapter.notifyDataSetChanged();
+                    }
+                });
     }
 }
