@@ -321,12 +321,14 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
                                 @Override
                                 public void onError(Throwable e) {
                                     Log.d("SignInFragment", "onNext: " + e.getMessage());
+                                    Toast.makeText(getActivity(), "签到失败，请检查活动编码！", Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
-                                public void onNext(Result<String> voidResult) {
+                                public void onNext(Result<String> stringResult) {
                                     Log.d("SignInFragment", "onNext: 签到成功");
-
+                                    Toast.makeText(getActivity(), "签到成功！", Toast.LENGTH_SHORT).show();
+                                    showSignInDialog(locationDescribe, ll);
                                 }
                             });
 
