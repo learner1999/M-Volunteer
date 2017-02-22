@@ -1,6 +1,11 @@
 package cn.zheteng123.m_volunteer.api;
 
+import java.util.List;
+
+import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.Token;
+import cn.zheteng123.m_volunteer.entity.login.Role;
+import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -20,4 +25,7 @@ public interface LoginApi {
             @Query("username") String username,
             @Query("password") String password
     );
+
+    @GET("api/loginSuccess")
+    Observable<Result<List<Role>>> getUserRoles();
 }

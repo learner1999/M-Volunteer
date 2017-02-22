@@ -5,24 +5,33 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
+import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.Token;
+import cn.zheteng123.m_volunteer.entity.login.Role;
 import cn.zheteng123.m_volunteer.ui.main.MainActivity;
 import cn.zheteng123.m_volunteer.util.LoginInfo;
-import rx.Observer;
+import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private static final String TAG = "LoginActivity";
 
     @BindView(R.id.btn_login)
     Button mBtnLogin;
@@ -63,13 +72,19 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        Networks
-                .getInstance()
-                .getLoginApi()
+
+        Networks.getInstance().getLoginApi()
                 .login("password", username, password)
+                .flatMap(new Func1<Token, Observable<Result<List<Role>>>>() {
+                    @Override
+                    public Observable<Result<List<Role>>> call(Token token) {
+                        LoginInfo.token = token.getAccessToken();
+                        return Networks.getInstance().getLoginApi().getUserRoles();
+                    }
+                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Token>() {
+                .subscribe(new Subscriber<Result<List<Role>>>() {
                     @Override
                     public void onCompleted() {
 
@@ -77,12 +92,12 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        Toast.makeText(LoginActivity.this, "登录失败！" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.d(TAG, "onError: " + e.getMessage());
                     }
 
                     @Override
-                    public void onNext(Token token) {
-                        LoginInfo.token = token.getAccessToken();
+                    public void onNext(Result<List<Role>> roleResult) {
+                        LoginInfo.sRole = roleResult.getData().get(0);
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
                     }

@@ -1,5 +1,7 @@
 package cn.zheteng123.m_volunteer.util;
 
+import cn.zheteng123.m_volunteer.entity.login.Role;
+
 /**
  * Created on 2017/2/21.
  */
@@ -8,4 +10,6 @@ package cn.zheteng123.m_volunteer.util;
 public class LoginInfo {
 
     public static String token = "";
+
+    public static Role sRole = null;
 }
