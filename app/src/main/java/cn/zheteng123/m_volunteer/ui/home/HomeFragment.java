@@ -3,6 +3,7 @@ package cn.zheteng123.m_volunteer.ui.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
@@ -32,6 +33,7 @@ import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.ui.activity_category.CategoryActivity;
 import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
 import cn.zheteng123.m_volunteer.ui.search.SearchActivity;
+import cn.zheteng123.m_volunteer.util.LoginInfo;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -68,6 +70,9 @@ public class HomeFragment extends Fragment {
 
     @BindView(R.id.iv_search)
     ImageView mIvSearch;
+
+    @BindView(R.id.fab_add_activity)
+    FloatingActionButton mFabAddActivity;
 
     @Nullable
     @Override
@@ -137,6 +142,17 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), SearchActivity.class));
+            }
+        });
+
+        // 设置创建活动按钮
+        if (LoginInfo.sRole != null && LoginInfo.sRole.getName().equals("organization")) {
+            mFabAddActivity.setVisibility(View.VISIBLE);
+        }
+        mFabAddActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: 2017/2/23 跳转到创建活动页面
             }
         });
 
