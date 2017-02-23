@@ -3,7 +3,9 @@ package cn.zheteng123.m_volunteer.api;
 import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
 import cn.zheteng123.m_volunteer.entity.PageInfo;
 import cn.zheteng123.m_volunteer.entity.Result;
+import cn.zheteng123.m_volunteer.entity.activity.ActivityDetail;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -33,4 +35,6 @@ public interface ActivityApi {
             @Query("district") String district
     );
 
+    @GET("api/activity/{id}")
+    Observable<Result<ActivityDetail>> getActivityDetailById(@Path("id") int id);
 }

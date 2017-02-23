@@ -22,4 +22,7 @@
     <string name="please_input_code">请输入编码</string>
     <string name="search_result">搜索结果</string>
     <string name="activity">活动</string>
+    <string name="activity_detail">活动详情</string>
+    <string name="i_want_to_enroll">我要报名</string>
+    <string name="enrolled_volunteer">已报名志愿者</string>
 </resources>

@@ -15,6 +15,7 @@ import java.util.List;
 import cn.zheteng123.m_volunteer.BuildConfig;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
+import cn.zheteng123.m_volunteer.ui.activity_detail.DetailActivity;
 
 /**
  * Created on 2017/2/17.
@@ -52,7 +53,7 @@ public class HomeActivityAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         ViewHolder viewHolder;
-        HomeActivityEntity homeActivity = getItem(position);
+        final HomeActivityEntity homeActivity = getItem(position);
 
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_home_activity, parent, false);
@@ -81,6 +82,13 @@ public class HomeActivityAdapter extends BaseAdapter {
         viewHolder.tvEnrollNum.setText(homeActivity.getEnrollNum() + "/" + homeActivity.getTotalNum());
 
         Glide.with(mContext).load(BuildConfig.API_BASE_URL + homeActivity.getPicture()).into(viewHolder.ivBackground);
+
+        viewHolder.ivBackground.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DetailActivity.actionStart(mContext, homeActivity);
+            }
+        });
 
         return convertView;
     }

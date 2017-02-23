@@ -2,12 +2,14 @@ package cn.zheteng123.m_volunteer.entity;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created on 2017/2/17.
  */
 
 
-public class HomeActivityEntity {
+public class HomeActivityEntity implements Serializable {
 
     private int id;  // 活动id
 
