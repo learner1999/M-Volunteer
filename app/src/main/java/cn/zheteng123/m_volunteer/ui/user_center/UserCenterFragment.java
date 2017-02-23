@@ -19,6 +19,7 @@ import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.user_center.VolunteerEntity;
 import cn.zheteng123.m_volunteer.ui.my_activity.MyActivityActivity;
+import cn.zheteng123.m_volunteer.ui.service_record.ServiceRecordActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -42,6 +43,9 @@ public class UserCenterFragment extends Fragment {
 
     @BindView(R.id.tv_working_hours)
     TextView mTvWorkingHours;
+
+    @BindView(R.id.ll_service_record)
+    LinearLayout mLlServiceRecord;
 
     @Nullable
     @Override
@@ -92,6 +96,13 @@ public class UserCenterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MyActivityActivity.actionStart(getActivity());
+            }
+        });
+
+        mLlServiceRecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ServiceRecordActivity.actionStart(getActivity());
             }
         });
     }
