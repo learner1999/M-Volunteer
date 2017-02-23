@@ -8,11 +8,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.zheteng123.m_volunteer.BuildConfig;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
@@ -26,6 +30,9 @@ import rx.schedulers.Schedulers;
 public class DetailActivity extends AppCompatActivity {
 
     private HomeActivityEntity mHomeActivity;
+
+    @BindView(R.id.iv_background)
+    ImageView mIvBackground;
 
     @BindView(R.id.tv_activity_title)
     TextView mTvTitle;
@@ -100,6 +107,7 @@ public class DetailActivity extends AppCompatActivity {
         mTvDistance.setText(mHomeActivity.getDistance() + "km");
         mTvEnrollNum.setText(Integer.toString(mHomeActivity.getEnrollNum()));
         mTvTotalNum.setText(Integer.toString(mHomeActivity.getTotalNum()));
+        Glide.with(this).load(BuildConfig.API_BASE_URL + mHomeActivity.getPicture()).into(mIvBackground);
     }
 
     private void initData() {
