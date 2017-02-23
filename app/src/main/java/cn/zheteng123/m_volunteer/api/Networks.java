@@ -34,6 +34,8 @@ public class Networks {
 
     private static SignInApi mSignInApi;
 
+    private static VolunteerApi mVolunteerApi;
+
     public static Networks getInstance() {
         if (mNetworks == null) {
             mNetworks = new Networks();
@@ -55,6 +57,10 @@ public class Networks {
 
     public SignInApi getSignInApi() {
         return mSignInApi == null ? configRetrofit(SignInApi.class) : mSignInApi;
+    }
+
+    public VolunteerApi getVolunteerApi() {
+        return mVolunteerApi == null ? configRetrofit(VolunteerApi.class) : mVolunteerApi;
     }
 
     private <T> T configRetrofit(Class<T> service) {
