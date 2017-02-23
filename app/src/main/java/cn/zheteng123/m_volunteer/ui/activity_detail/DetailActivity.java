@@ -136,7 +136,7 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void putDataIntoView(ActivityDetail activityDetail) {
-        mTvAddress.setText(activityDetail.getAddress());
+        mTvAddress.setText(activityDetail.getAddressStreet());
         mTvOrganization.setText(activityDetail.getOrganization());
         mTvDate.setText(activityDetail.getTime());
         mTvSuperintendentName.setText(activityDetail.getPrincipalName());
