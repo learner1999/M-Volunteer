@@ -25,4 +25,10 @@
     <string name="activity_detail">活动详情</string>
     <string name="i_want_to_enroll">我要报名</string>
     <string name="enrolled_volunteer">已报名志愿者</string>
+    <string name="logout">退出登录</string>
+    <string name="certificate_request">证书申请</string>
+    <string name="service_record">服务记录</string>
+    <string name="my_activity">我的活动</string>
+    <string name="feedback">留言反馈</string>
+    <string name="about_m_volunteer">关于美志愿</string>
 </resources>
