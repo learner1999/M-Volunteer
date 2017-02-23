@@ -14,6 +14,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.zheteng123.m_volunteer.BuildConfig;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.entity.my_activity.MyActivityEntity;
 
@@ -61,12 +62,19 @@ public class MyActivityAdapter extends BaseAdapter {
 
         MyActivityEntity myActivity = getItem(position);
 
-        Glide.with(mContext).load(myActivity.getPicture()).into(viewHolder.ivActivity);
+        Glide.with(mContext).load(BuildConfig.API_BASE_URL + myActivity.getPicture()).into(viewHolder.ivActivity);
         viewHolder.tvTitle.setText(myActivity.getName());
         viewHolder.tvOrganization.setText(myActivity.getOrganization());
         viewHolder.tvTime.setText("发布时间：" + myActivity.getTimestamp());
         viewHolder.tvRecruitStatus.setText(myActivity.getActivityStatus());
         viewHolder.tvInterviewStatus.setText(myActivity.getInterviewStatus());
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: 2017/2/23 跳转到详情页
+            }
+        });
 
         return convertView;
     }

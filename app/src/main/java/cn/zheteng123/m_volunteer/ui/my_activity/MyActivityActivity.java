@@ -1,12 +1,12 @@
 package cn.zheteng123.m_volunteer.ui.my_activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,7 +20,6 @@ import cn.zheteng123.m_volunteer.entity.PageInfo;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.my_activity.MyActivityEntity;
 import cn.zheteng123.m_volunteer.ui.my_activity.adapter.MyActivityAdapter;
-import cn.zheteng123.m_volunteer.util.WindowAttr;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -30,7 +29,6 @@ public class MyActivityActivity extends AppCompatActivity {
     List<MyActivityEntity> mMyActivityEntityList = new ArrayList<>();
     MyActivityAdapter mMyActivityAdapter;
 
-    @BindView(R.id.v_status_bar_fix) View mViewStatusBarFixer;
     @BindView(R.id.lv_my_activity) ListView mLvMyActivity;
 
     @Override
@@ -45,18 +43,16 @@ public class MyActivityActivity extends AppCompatActivity {
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
             decorView.setSystemUiVisibility(option);
             getWindow().setStatusBarColor(Color.TRANSPARENT);
-
-            // 设置状态栏高度
-            mViewStatusBarFixer.setLayoutParams(
-                    new LinearLayout.LayoutParams(
-                            ViewGroup.LayoutParams.MATCH_PARENT,
-                            WindowAttr.getStatusBarHeight(this))
-            );
         }
 
         initView();
         initData();
 
+    }
+
+    public static void actionStart(Context context) {
+        Intent intent = new Intent(context, MyActivityActivity.class);
+        context.startActivity(intent);
     }
 
     private void initData() {
