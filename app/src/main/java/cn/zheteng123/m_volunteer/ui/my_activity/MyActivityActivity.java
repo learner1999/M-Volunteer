@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class MyActivityActivity extends AppCompatActivity {
 
     @BindView(R.id.lv_my_activity) ListView mLvMyActivity;
 
+    @BindView(R.id.iv_back) ImageView mIvBack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +49,18 @@ public class MyActivityActivity extends AppCompatActivity {
         }
 
         initView();
+        initListener();
         initData();
 
+    }
+
+    private void initListener() {
+        mIvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public static void actionStart(Context context) {
