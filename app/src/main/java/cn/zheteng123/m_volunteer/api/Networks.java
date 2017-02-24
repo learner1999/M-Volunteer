@@ -34,6 +34,8 @@ public class Networks {
 
     private static SignInApi mSignInApi;
 
+    private static FileUploadApi mFileUploadApi;
+
     private static VolunteerApi mVolunteerApi;
 
     public static Networks getInstance() {
@@ -61,6 +63,10 @@ public class Networks {
 
     public VolunteerApi getVolunteerApi() {
         return mVolunteerApi == null ? configRetrofit(VolunteerApi.class) : mVolunteerApi;
+    }
+
+    public FileUploadApi getFileUploadApi() {
+        return mFileUploadApi == null ? configRetrofit(FileUploadApi.class) : mFileUploadApi;
     }
 
     private <T> T configRetrofit(Class<T> service) {

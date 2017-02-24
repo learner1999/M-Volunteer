@@ -67,6 +67,8 @@
         </activity>
         <activity android:name=".ui.service_record.ServiceRecordActivity">
         </activity>
+        <activity android:name=".ui.activity_add.ActivityAddActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -30,6 +30,7 @@ import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
 import cn.zheteng123.m_volunteer.entity.PageInfo;
 import cn.zheteng123.m_volunteer.entity.Result;
+import cn.zheteng123.m_volunteer.ui.activity_add.ActivityAddActivity;
 import cn.zheteng123.m_volunteer.ui.activity_category.CategoryActivity;
 import cn.zheteng123.m_volunteer.ui.home.adapter.HomeActivityAdapter;
 import cn.zheteng123.m_volunteer.ui.search.SearchActivity;
@@ -152,7 +153,7 @@ public class HomeFragment extends Fragment {
         mFabAddActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: 2017/2/23 跳转到创建活动页面
+                ActivityAddActivity.actionStart(getActivity());
             }
         });
 
