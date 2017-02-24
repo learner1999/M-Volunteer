@@ -33,7 +33,16 @@
     <string name="about_m_volunteer">关于美志愿</string>
     <string name="publish_activity">发布活动</string>
     <string name="publish">发布</string>
+    <string name="recruit_time">招募时间：</string>
+    <string name="activity_time">活动时间：</string>
     <string-array name="service_type">
         <item>青少年服务</item>
+        <item>敬老助残</item>
+        <item>扶贫帮困</item>
+        <item>文明礼仪</item>
+        <item>平安守护</item>
+        <item>环境保护</item>
+        <item>文化体育</item>
+        <item>便民服务</item>
     </string-array>
 </resources>

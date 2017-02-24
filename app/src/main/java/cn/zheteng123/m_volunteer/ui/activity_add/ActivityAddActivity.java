@@ -1,6 +1,7 @@
 package cn.zheteng123.m_volunteer.ui.activity_add;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,8 +14,10 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -51,6 +54,18 @@ public class ActivityAddActivity extends AppCompatActivity {
     @BindView(R.id.iv_image)
     ImageView mIvImage;
 
+    @BindView(R.id.ll_recruit_time)
+    LinearLayout mLlRecruitTime;
+
+    @BindView(R.id.tv_recruit_time)
+    TextView mTvRecruitTime;
+
+    @BindView(R.id.ll_activity_time)
+    LinearLayout mLlActivityTime;
+
+    @BindView(R.id.tv_activity_time)
+    TextView mTvActivityTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +93,32 @@ public class ActivityAddActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            }
+        });
+
+        mLlRecruitTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(ActivityAddActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        String recruitTime = String.format("即日起至%d月%d日", month + 1, dayOfMonth);
+                        mTvRecruitTime.setText(recruitTime);
+                    }
+                }, 2017, 1, 1).show();
+            }
+        });
+
+        mLlActivityTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(ActivityAddActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        String activityTime = String.format("%d月%d日", month + 1, dayOfMonth);
+                        mTvActivityTime.setText(activityTime);
+                    }
+                }, 2017, 1, 1).show();
             }
         });
     }

@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="活动名称"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:background="#FFFFFF"
                     android:padding="10dp"/>
 
@@ -90,7 +90,7 @@
                     android:layout_height="150dp"
                     android:gravity="top"
                     android:hint="描述一下活动相关的信息"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:background="#FFFFFF"
                     android:padding="10dp"/>
 
@@ -206,12 +206,106 @@
                 android:background="#FFFFFF"
                 android:orientation="vertical">
 
-                <Spinner
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/service_type"
-                    android:padding="10dp"/>
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="服务类型："
+                        android:padding="10dp"/>
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/service_type"
+                        android:padding="5dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="#B5B1AB"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_recruit_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recruit_time"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_recruit_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="12dp"/>
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_right_grey"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginEnd="16dp"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="#B5B1AB"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_activity_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/activity_time"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_activity_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="12dp"/>
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_right_grey"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginEnd="16dp"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
