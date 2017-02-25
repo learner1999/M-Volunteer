@@ -40,6 +40,8 @@ public class Networks {
 
     private static ActivityUserApi mActivityUserApi;
 
+    private static CertificateApi mCertificateApi;
+
     public static Networks getInstance() {
         if (mNetworks == null) {
             mNetworks = new Networks();
@@ -73,6 +75,10 @@ public class Networks {
 
     public ActivityUserApi getActivityUserApi() {
         return mActivityUserApi == null ? configRetrofit(ActivityUserApi.class) : mActivityUserApi;
+    }
+
+    public CertificateApi getCertificateApi() {
+        return mCertificateApi == null ? configRetrofit(CertificateApi.class) : mCertificateApi;
     }
 
     private <T> T configRetrofit(Class<T> service) {
