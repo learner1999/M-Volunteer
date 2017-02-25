@@ -14,9 +14,12 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,12 +31,17 @@ import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
+import cn.zheteng123.m_volunteer.entity.activity_add.ActivityEntity;
+import cn.zheteng123.m_volunteer.entity.baidu.ConverseGeographyResult;
+import cn.zheteng123.m_volunteer.entity.baidu.GeographyResult;
 import cn.zheteng123.m_volunteer.util.MyUtil;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
@@ -46,7 +54,13 @@ public class ActivityAddActivity extends AppCompatActivity {
 
     private static final int REQUEST_PICK_IMAGE = 1;
 
-    private String imgUrl = "";
+    private String mImgUrl = "";
+
+    private String mProvince, mCity, mDistrict, mStreet;
+
+    private double mLng, mLat;
+
+    private String mServiceType = "青少年活动";
 
     @BindView(R.id.ll_select_image)
     LinearLayout mLlSelectImage;
@@ -65,6 +79,36 @@ public class ActivityAddActivity extends AppCompatActivity {
 
     @BindView(R.id.tv_activity_time)
     TextView mTvActivityTime;
+
+    @BindView(R.id.btn_publish)
+    Button mBtnPublish;
+
+    @BindView(R.id.et_title)
+    EditText mEtTitle;
+
+    @BindView(R.id.et_description)
+    EditText mEtDescription;
+
+    @BindView(R.id.et_address)
+    EditText mEtAddress;
+
+    @BindView(R.id.et_recruit_num)
+    EditText mEtRecruitNum;
+
+    @BindView(R.id.et_working_hours)
+    EditText mEtWorkingHours;
+
+    @BindView(R.id.et_service_object)
+    EditText mEtServiceObject;
+
+    @BindView(R.id.spinner_service_type)
+    Spinner mSpinnerServiceType;
+
+    @BindView(R.id.et_superintendent_name)
+    EditText mEtSuperintendentName;
+
+    @BindView(R.id.et_superintendent_telephone)
+    EditText mEtSuperintendentTelephone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,6 +163,108 @@ public class ActivityAddActivity extends AppCompatActivity {
                         mTvActivityTime.setText(activityTime);
                     }
                 }, 2017, 1, 1).show();
+            }
+        });
+
+        mEtAddress.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus && !mEtAddress.getText().toString().equals("")) {
+                    Log.d(TAG, "onFocusChange: 地址输入框失去焦点");
+                    MyUtil
+                            .getGeographyByAddress(mEtAddress.getText().toString())
+                            .flatMap(new Func1<GeographyResult, Observable<ConverseGeographyResult>>() {
+                                @Override
+                                public Observable<ConverseGeographyResult> call(GeographyResult geographyResult) {
+                                    GeographyResult.ResultBean.LocationBean location = geographyResult.getResult().getLocation();
+                                    mLat = location.getLat();
+                                    mLng = location.getLng();
+                                    return MyUtil.getConverseGeographyByCoordinate(mLng, mLat);
+                                }
+                            })
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<ConverseGeographyResult>() {
+                                @Override
+                                public void onCompleted() {
+
+                                }
+
+                                @Override
+                                public void onError(Throwable e) {
+                                    Log.d(TAG, "onError: " + e.getMessage());
+                                }
+
+                                @Override
+                                public void onNext(ConverseGeographyResult converseGeographyResult) {
+                                    ConverseGeographyResult.ResultBean.AddressComponentBean addressComponent =
+                                            converseGeographyResult.getResult().getAddressComponent();
+                                    mProvince = addressComponent.getProvince();
+                                    mCity = addressComponent.getCity();
+                                    mDistrict = addressComponent.getDistrict();
+                                    mStreet = addressComponent.getStreet();
+                                    Log.d(TAG, "onNext: 完成地址转换——" + mLng + " " + mLat + " " + mProvince + mCity + mDistrict + mStreet);
+                                }
+                            });
+                }
+            }
+        });
+
+        // mSpinnerServiceType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        //     @Override
+        //     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //         mServiceType = parent.getSelectedItem().toString();
+        //     }
+        // });
+
+        mBtnPublish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityEntity activityEntity = new ActivityEntity();
+                activityEntity.setActivityStatusId(1);
+                activityEntity.setAddress(mEtAddress.getText().toString());
+                activityEntity.setAddressProvince(mProvince);
+                activityEntity.setAddressCity(mCity);
+                activityEntity.setAddressDistrict(mDistrict);
+                activityEntity.setAddressStreet(mStreet);
+                activityEntity.setCoordLat(mLat);
+                activityEntity.setCoordLong(mLng);
+                activityEntity.setName(mEtTitle.getText().toString());
+                activityEntity.setDescription(mEtDescription.getText().toString());
+                activityEntity.setPicture(mImgUrl);
+                activityEntity.setPrincipalName(mEtSuperintendentName.getText().toString());
+                activityEntity.setPrincipalContact(mEtSuperintendentTelephone.getText().toString());
+                activityEntity.setRecruitPersonNumber(Integer.parseInt(mEtRecruitNum.getText().toString()));
+                activityEntity.setRecruitTime(mTvRecruitTime.getText().toString());
+                activityEntity.setServiceObject(mEtServiceObject.getText().toString());
+                activityEntity.setServiceType(mSpinnerServiceType.getSelectedItem().toString());
+                activityEntity.setTime(mTvActivityTime.getText().toString());
+                activityEntity.setTimestamp("2017-02-24");
+                activityEntity.setWorkingHours(Integer.parseInt(mEtWorkingHours.getText().toString()));
+
+                Networks
+                        .getInstance()
+                        .getActivityApi()
+                        .addActivity(activityEntity)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Subscriber<Result<String>>() {
+                            @Override
+                            public void onCompleted() {
+
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+
+                            }
+
+                            @Override
+                            public void onNext(Result<String> stringResult) {
+                                Toast.makeText(ActivityAddActivity.this, stringResult.getData(), Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        });
             }
         });
     }
@@ -205,7 +351,7 @@ public class ActivityAddActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(Result<String> stringResult) {
-                        imgUrl = stringResult.getData();
+                        mImgUrl = stringResult.getData();
                     }
                 });
 

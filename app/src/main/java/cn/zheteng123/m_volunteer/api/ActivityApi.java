@@ -4,7 +4,10 @@ import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
 import cn.zheteng123.m_volunteer.entity.PageInfo;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.activity.ActivityDetail;
+import cn.zheteng123.m_volunteer.entity.activity_add.ActivityEntity;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
@@ -37,4 +40,7 @@ public interface ActivityApi {
 
     @GET("api/activity/{id}")
     Observable<Result<ActivityDetail>> getActivityDetailById(@Path("id") int id);
+
+    @POST("api/activity")
+    Observable<Result<String>> addActivity(@Body ActivityEntity activityEntity);
 }

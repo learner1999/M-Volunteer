@@ -38,6 +38,7 @@
                 android:textSize="16sp"/>
 
             <Button
+                android:id="@+id/btn_publish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -69,6 +70,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/et_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="活动名称"
@@ -86,6 +88,7 @@
                     android:layout_marginEnd="8dp"/>
 
                 <EditText
+                    android:id="@+id/et_description"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:gravity="top"
@@ -137,6 +140,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/et_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="活动地址"
@@ -154,6 +158,7 @@
                     android:layout_marginEnd="8dp"/>
 
                 <EditText
+                    android:id="@+id/et_recruit_num"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="招募人数"
@@ -172,6 +177,7 @@
                     android:layout_marginEnd="8dp"/>
 
                 <EditText
+                    android:id="@+id/et_working_hours"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="工时"
@@ -190,6 +196,7 @@
                     android:layout_marginEnd="8dp"/>
 
                 <EditText
+                    android:id="@+id/et_service_object"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="服务对象"
@@ -218,6 +225,7 @@
                         android:padding="10dp"/>
 
                     <Spinner
+                        android:id="@+id/spinner_service_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/service_type"
@@ -318,6 +326,7 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/et_superintendent_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="负责人姓名"
@@ -335,8 +344,10 @@
                     android:layout_marginEnd="8dp"/>
 
                 <EditText
+                    android:id="@+id/et_superintendent_telephone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:hint="负责人联系方式"
                     android:background="#FFFFFF"
                     android:padding="10dp"
