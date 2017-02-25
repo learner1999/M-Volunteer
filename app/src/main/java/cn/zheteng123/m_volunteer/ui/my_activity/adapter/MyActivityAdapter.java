@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.BuildConfig;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.entity.my_activity.MyActivityEntity;
+import cn.zheteng123.m_volunteer.ui.activity_detail.DetailActivity;
 
 /**
  * Created on 2017/2/23.
@@ -60,7 +61,7 @@ public class MyActivityAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        MyActivityEntity myActivity = getItem(position);
+        final MyActivityEntity myActivity = getItem(position);
 
         Glide.with(mContext).load(BuildConfig.API_BASE_URL + myActivity.getPicture()).into(viewHolder.ivActivity);
         viewHolder.tvTitle.setText(myActivity.getName());
@@ -72,7 +73,7 @@ public class MyActivityAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: 2017/2/23 跳转到详情页
+                DetailActivity.actionStart(mContext, myActivity.getId());
             }
         });
 
