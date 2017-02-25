@@ -86,7 +86,7 @@ public class HomeActivityAdapter extends BaseAdapter {
         viewHolder.ivBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DetailActivity.actionStart(mContext, homeActivity);
+                DetailActivity.actionStart(mContext, homeActivity.getId());
             }
         });
 

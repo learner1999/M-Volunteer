@@ -39,7 +39,11 @@ public interface ActivityApi {
     );
 
     @GET("api/activity/{id}")
-    Observable<Result<ActivityDetail>> getActivityDetailById(@Path("id") int id);
+    Observable<Result<ActivityDetail>> getActivityDetailById(
+            @Path("id") int id,
+            @Query("coordLong") double lng,
+            @Query("coordLat") double lat
+    );
 
     @POST("api/activity")
     Observable<Result<String>> addActivity(@Body ActivityEntity activityEntity);

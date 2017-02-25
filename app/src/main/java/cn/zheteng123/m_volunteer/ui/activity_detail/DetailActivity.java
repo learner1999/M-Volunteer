@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -14,12 +15,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Locale;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.BuildConfig;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
-import cn.zheteng123.m_volunteer.entity.HomeActivityEntity;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.activity.ActivityDetail;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
@@ -29,7 +31,9 @@ import rx.schedulers.Schedulers;
 
 public class DetailActivity extends AppCompatActivity {
 
-    private HomeActivityEntity mHomeActivity;
+    private static final String TAG = "DetailActivity";
+
+    private int mActivityId;
 
     @BindView(R.id.iv_background)
     ImageView mIvBackground;
@@ -90,31 +94,26 @@ public class DetailActivity extends AppCompatActivity {
         );
 
         Intent intent = getIntent();
-        mHomeActivity = (HomeActivityEntity) intent.getSerializableExtra("homeActivity");
+        mActivityId = intent.getIntExtra("activityId", 0);
 
         initView();
         initData();
     }
 
-    public static void actionStart(Context context, HomeActivityEntity homeActivity) {
+    public static void actionStart(Context context, int activityId) {
         Intent intent = new Intent(context, DetailActivity.class);
-        intent.putExtra("homeActivity", homeActivity);
+        intent.putExtra("activityId", activityId);
         context.startActivity(intent);
     }
 
     private void initView() {
-        mTvTitle.setText(mHomeActivity.getTitle());
-        mTvDistance.setText(mHomeActivity.getDistance() + "km");
-        mTvEnrollNum.setText(Integer.toString(mHomeActivity.getEnrollNum()));
-        mTvTotalNum.setText(Integer.toString(mHomeActivity.getTotalNum()));
-        Glide.with(this).load(BuildConfig.API_BASE_URL + mHomeActivity.getPicture()).into(mIvBackground);
     }
 
     private void initData() {
         Networks
                 .getInstance()
                 .getActivityApi()
-                .getActivityDetailById(mHomeActivity.getId())
+                .getActivityDetailById(mActivityId, 120, 30) // TODO: 2017/2/25 定位
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Result<ActivityDetail>>() {
@@ -125,7 +124,7 @@ public class DetailActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
-
+                        Log.d(TAG, "onError: " + e.getMessage());
                     }
 
                     @Override
@@ -136,6 +135,11 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void putDataIntoView(ActivityDetail activityDetail) {
+        mTvTitle.setText(activityDetail.getName());
+        mTvDistance.setText(String.format(Locale.CHINA, "%.1fkm", activityDetail.getDistance()));
+        mTvEnrollNum.setText(String.valueOf(activityDetail.getVolunteers().size()));
+        mTvTotalNum.setText(String.valueOf(activityDetail.getRecruitPersonNumber()));
+        Glide.with(this).load(BuildConfig.API_BASE_URL + activityDetail.getPicture()).into(mIvBackground);
         mTvAddress.setText(activityDetail.getAddressStreet());
         mTvOrganization.setText(activityDetail.getOrganization());
         mTvDate.setText(activityDetail.getTime());
