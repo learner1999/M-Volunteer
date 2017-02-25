@@ -69,6 +69,8 @@
         </activity>
         <activity android:name=".ui.activity_add.ActivityAddActivity">
         </activity>
+        <activity android:name=".ui.certificate.CertificateActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -18,6 +19,7 @@ import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.user_center.VolunteerEntity;
+import cn.zheteng123.m_volunteer.ui.certificate.CertificateActivity;
 import cn.zheteng123.m_volunteer.ui.my_activity.MyActivityActivity;
 import cn.zheteng123.m_volunteer.ui.service_record.ServiceRecordActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -31,6 +33,8 @@ import rx.schedulers.Schedulers;
 
 
 public class UserCenterFragment extends Fragment {
+
+    private double mWorkingHours;
 
     @BindView(R.id.ll_my_activity)
     LinearLayout mLlMyActivity;
@@ -47,6 +51,9 @@ public class UserCenterFragment extends Fragment {
     @BindView(R.id.ll_service_record)
     LinearLayout mLlServiceRecord;
 
+    @BindView(R.id.ll_apply_for_certificate)
+    LinearLayout mLlApplyForCertificate;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -60,10 +67,11 @@ public class UserCenterFragment extends Fragment {
         return view;
     }
 
-    private void putDataIntoView(VolunteerEntity volunteerEntity) {
+    private void putDataIntoView(final VolunteerEntity volunteerEntity) {
         Glide.with(this).load(BuildConfig.API_BASE_URL + volunteerEntity.getAvatar()).into(mCivAvatar);
         mTvVolunteerName.setText(volunteerEntity.getName());
         mTvWorkingHours.setText("工时：" + volunteerEntity.getWorkingHours() + " h");
+        mWorkingHours = volunteerEntity.getWorkingHours();
     }
 
     private void initData() {
@@ -103,6 +111,17 @@ public class UserCenterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ServiceRecordActivity.actionStart(getActivity());
+            }
+        });
+
+        mLlApplyForCertificate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mWorkingHours >= 50) {
+                    CertificateActivity.actionStart(getActivity());
+                } else {
+                    Toast.makeText(getActivity(), "您的工时还没有达到50小时，暂时还不能申请证书，请继续努力哦！", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -21,7 +21,7 @@ public class VolunteerEntity {
     private String email;
     private String name;
     private int age;
-    private int workingHours;
+    private double workingHours;
     private String avatar;
 
     public int getId() {
@@ -56,11 +56,11 @@ public class VolunteerEntity {
         this.age = age;
     }
 
-    public int getWorkingHours() {
+    public double getWorkingHours() {
         return workingHours;
     }
 
-    public void setWorkingHours(int workingHours) {
+    public void setWorkingHours(double workingHours) {
         this.workingHours = workingHours;
     }
 
