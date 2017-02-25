@@ -18,8 +18,10 @@ import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.customview.MyViewPager;
 import cn.zheteng123.m_volunteer.ui.home.HomeFragment;
 import cn.zheteng123.m_volunteer.ui.main.adapter.ViewPagerAdapter;
+import cn.zheteng123.m_volunteer.ui.organization_center.OrganizationCenterFragment;
 import cn.zheteng123.m_volunteer.ui.signin.SignInFragment;
 import cn.zheteng123.m_volunteer.ui.user_center.UserCenterFragment;
+import cn.zheteng123.m_volunteer.util.LoginInfo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,8 +48,13 @@ public class MainActivity extends AppCompatActivity {
         mFragmentList.add(mHomeFragment);
         SignInFragment signInFragment = new SignInFragment();
         mFragmentList.add(signInFragment);
-        UserCenterFragment userCenterFragment = new UserCenterFragment();
-        mFragmentList.add(userCenterFragment);
+        if (LoginInfo.sRole.getName().equals("volunteer")) {
+            UserCenterFragment userCenterFragment = new UserCenterFragment();
+            mFragmentList.add(userCenterFragment);
+        } else {
+            OrganizationCenterFragment organizationCenterFragment = new OrganizationCenterFragment();
+            mFragmentList.add(organizationCenterFragment);
+        }
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mFragmentList);
 
