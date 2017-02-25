@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="为老人开展志愿服务"
-            android:maxLength="15"
+            android:maxLength="10"
             android:textColor="#000000"
             android:textSize="16sp"/>
         
