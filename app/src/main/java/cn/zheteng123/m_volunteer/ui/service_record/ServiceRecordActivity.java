@@ -14,21 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.PageInfo;
 import cn.zheteng123.m_volunteer.entity.Result;
-import cn.zheteng123.m_volunteer.entity.my_activity.MyActivityEntity;
-import cn.zheteng123.m_volunteer.ui.my_activity.MyActivityActivity;
-import cn.zheteng123.m_volunteer.ui.my_activity.adapter.MyActivityAdapter;
+import cn.zheteng123.m_volunteer.entity.service_record.ServiceRecordEntity;
+import cn.zheteng123.m_volunteer.ui.service_record.adapter.ServiceRecordAdapter;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 public class ServiceRecordActivity extends AppCompatActivity {
 
-    List<MyActivityEntity> mMyActivityEntityList = new ArrayList<>();
-    MyActivityAdapter mMyActivityAdapter;
+    List<ServiceRecordEntity> mServiceRecordEntityList = new ArrayList<>();
+    ServiceRecordAdapter mServiceRecordAdapter;
 
     @BindView(R.id.lv_my_activity)
     ListView mLvMyActivity;
@@ -40,6 +40,7 @@ public class ServiceRecordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_record);
+        ButterKnife.bind(this);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             View decorView = getWindow().getDecorView();
@@ -64,7 +65,7 @@ public class ServiceRecordActivity extends AppCompatActivity {
     }
 
     public static void actionStart(Context context) {
-        Intent intent = new Intent(context, MyActivityActivity.class);
+        Intent intent = new Intent(context, ServiceRecordActivity.class);
         context.startActivity(intent);
     }
 
@@ -72,10 +73,10 @@ public class ServiceRecordActivity extends AppCompatActivity {
         Networks
                 .getInstance()
                 .getVolunteerApi()
-                .getMyActivities(1, 10) // // TODO: 2017/2/23 分页
+                .getMyActivityHistory(1, 10) // // TODO: 2017/2/23 分页
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<Result<PageInfo<MyActivityEntity>>>() {
+                .subscribe(new Subscriber<Result<PageInfo<ServiceRecordEntity>>>() {
                     @Override
                     public void onCompleted() {
 
@@ -87,17 +88,17 @@ public class ServiceRecordActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onNext(Result<PageInfo<MyActivityEntity>> pageInfoResult) {
-                        mMyActivityEntityList.clear();
-                        List<MyActivityEntity> myActivityEntityList = pageInfoResult.getData().getList();
-                        mMyActivityEntityList.addAll(myActivityEntityList);
-                        mMyActivityAdapter.notifyDataSetChanged();
+                    public void onNext(Result<PageInfo<ServiceRecordEntity>> pageInfoResult) {
+                        mServiceRecordEntityList.clear();
+                        List<ServiceRecordEntity> serviceRecordEntity = pageInfoResult.getData().getList();
+                        mServiceRecordEntityList.addAll(serviceRecordEntity);
+                        mServiceRecordAdapter.notifyDataSetChanged();
                     }
                 });
     }
 
     private void initView() {
-        mMyActivityAdapter = new MyActivityAdapter(this, mMyActivityEntityList);
-        mLvMyActivity.setAdapter(mMyActivityAdapter);
+        mServiceRecordAdapter = new ServiceRecordAdapter(this, mServiceRecordEntityList);
+        mLvMyActivity.setAdapter(mServiceRecordAdapter);
     }
 }
