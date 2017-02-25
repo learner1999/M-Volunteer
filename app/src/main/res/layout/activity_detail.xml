@@ -471,6 +471,7 @@
 
 
     <Button
+        android:id="@+id/btn_enroll"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/shape_button_border_radius"

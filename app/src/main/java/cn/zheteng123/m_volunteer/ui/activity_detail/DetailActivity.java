@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.activity.ActivityDetail;
+import cn.zheteng123.m_volunteer.entity.activity.ActivityUser;
 import cn.zheteng123.m_volunteer.util.WindowAttr;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -34,6 +36,8 @@ public class DetailActivity extends AppCompatActivity {
     private static final String TAG = "DetailActivity";
 
     private int mActivityId;
+
+    private boolean mIsEnroll;
 
     @BindView(R.id.iv_background)
     ImageView mIvBackground;
@@ -71,6 +75,9 @@ public class DetailActivity extends AppCompatActivity {
     @BindView(R.id.tv_total_num)
     TextView mTvTotalNum;
 
+    @BindView(R.id.btn_enroll)
+    Button mBtnEnroll;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,7 +104,71 @@ public class DetailActivity extends AppCompatActivity {
         mActivityId = intent.getIntExtra("activityId", 0);
 
         initView();
+        initListener();
         initData();
+    }
+
+    private void initListener() {
+        mBtnEnroll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mIsEnroll) {
+                    Networks
+                            .getInstance()
+                            .getActivityUserApi()
+                            .cancelActivity(mActivityId)
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<Result<String>>() {
+                                @Override
+                                public void onCompleted() {
+
+                                }
+
+                                @Override
+                                public void onError(Throwable e) {
+                                    Log.d(TAG, "onError: " + e.getMessage());
+                                }
+
+                                @Override
+                                public void onNext(Result<String> stringResult) {
+                                    Log.d(TAG, "onNext: " + "取消报名成功");
+                                    mIsEnroll = false;
+                                    mBtnEnroll.setBackgroundResource(R.drawable.shape_button_border_radius);
+                                    mBtnEnroll.setText("我要报名");
+                                }
+                            });
+                } else {
+                    ActivityUser activityUser = new ActivityUser();
+                    activityUser.setActivityId(mActivityId);
+                    Networks
+                            .getInstance()
+                            .getActivityUserApi()
+                            .enrollActivity(activityUser)
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<Result<String>>() {
+                                @Override
+                                public void onCompleted() {
+
+                                }
+
+                                @Override
+                                public void onError(Throwable e) {
+                                    Log.d(TAG, "onError: " + e.getMessage());
+                                }
+
+                                @Override
+                                public void onNext(Result<String> stringResult) {
+                                    Log.d(TAG, "onNext: " + "报名成功");
+                                    mIsEnroll = true;
+                                    mBtnEnroll.setBackgroundResource(R.drawable.shape_button_grey_border_radius);
+                                    mBtnEnroll.setText("取消报名");
+                                }
+                            });
+                }
+            }
+        });
     }
 
     public static void actionStart(Context context, int activityId) {
@@ -147,5 +218,10 @@ public class DetailActivity extends AppCompatActivity {
         mTvTelephone.setText(activityDetail.getPrincipalContact());
         mTvCategory.setText(activityDetail.getServiceType());
         mTvDetail.setText(activityDetail.getDescription());
+        if (activityDetail.isSignUp()) {
+            mIsEnroll = true;
+            mBtnEnroll.setBackgroundResource(R.drawable.shape_button_grey_border_radius);
+            mBtnEnroll.setText("取消报名");
+        }
     }
 }
