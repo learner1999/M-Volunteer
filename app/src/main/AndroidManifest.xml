@@ -73,6 +73,8 @@
         </activity>
         <activity android:name=".ui.activity_manage.ManageActivity">
         </activity>
+        <activity android:name=".ui.member_manage.MemberActivity">
+        </activity>
     </application>
 
 </manifest>

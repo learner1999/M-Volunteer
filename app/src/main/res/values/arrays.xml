@@ -5,4 +5,9 @@
         <item>活动进行</item>
         <item>活动结束</item>
     </array>
+
+    <array name="certificate_status">
+        <item>正在审核</item>
+        <item>等待邮寄</item>
+    </array>
 </resources>
