@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="activity_status">
+        <item>正在招募</item>
+        <item>活动进行</item>
+        <item>活动结束</item>
+    </array>
+</resources>

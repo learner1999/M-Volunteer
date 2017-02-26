@@ -18,6 +18,7 @@ import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.organization.OrganizationEntity;
+import cn.zheteng123.m_volunteer.ui.activity_manage.ManageActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -85,7 +86,7 @@ public class OrganizationCenterFragment extends Fragment {
         mLlManageActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: 2017/2/25 跳转至活动管理界面
+                ManageActivity.actionStart(getActivity());
             }
         });
 

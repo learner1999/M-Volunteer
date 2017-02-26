@@ -71,6 +71,8 @@
         </activity>
         <activity android:name=".ui.certificate.CertificateActivity">
         </activity>
+        <activity android:name=".ui.activity_manage.ManageActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import cn.zheteng123.m_volunteer.entity.activity_add.ActivityEntity;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
@@ -47,4 +48,7 @@ public interface ActivityApi {
 
     @POST("api/activity")
     Observable<Result<String>> addActivity(@Body ActivityEntity activityEntity);
+
+    @PUT("api/activity/{id}")
+    Observable<Result<String>> modifyActivityStatus(@Path("id") int id, @Query("activityStatusId") int activityStatusId);
 }

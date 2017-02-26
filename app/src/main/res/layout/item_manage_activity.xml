@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:padding="10dp"
+                android:id="@+id/rl_item">
+
+    <ImageView
+        android:id="@+id/iv_activity"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_image_round"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/iv_activity"
+        android:layout_toEndOf="@id/iv_activity"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/tv_activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="为老人开展志愿服务"
+            android:maxLength="10"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="发布时间：2017-03-01"
+            android:textSize="12sp"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner_recruit_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/shape_text_recruit_status"
+        android:textColor="#FFFFFF"
+        android:entries="@array/activity_status"
+        android:padding="4dp"/>
+
+</RelativeLayout>
