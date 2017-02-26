@@ -46,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         mHomeFragment = new HomeFragment();
         mFragmentList.add(mHomeFragment);
+        Fragment conversationFragment = LoginInfo.sYWIMKit.getConversationFragment();
+        mFragmentList.add(conversationFragment);
+        // Fragment contactsFragment = LoginInfo.sYWIMKit.getContactsFragment();
+        // mFragmentList.add(contactsFragment);
         SignInFragment signInFragment = new SignInFragment();
         mFragmentList.add(signInFragment);
         if (LoginInfo.sRole.getName().equals("volunteer")) {

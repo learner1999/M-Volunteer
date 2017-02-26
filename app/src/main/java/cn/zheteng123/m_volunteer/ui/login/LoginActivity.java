@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.alibaba.mobileim.IYWLoginService;
+import com.alibaba.mobileim.YWAPI;
+import com.alibaba.mobileim.YWLoginParam;
+import com.alibaba.mobileim.channel.event.IWxCallback;
+
 import java.util.List;
 
 import butterknife.BindView;
@@ -64,8 +69,8 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_login)
     public void login() {
-        String username = mEtUsername.getText().toString();
-        String password = mEtPassword.getText().toString();
+        final String username = mEtUsername.getText().toString();
+        final String password = mEtPassword.getText().toString();
 
         if (username.equals("") || password.equals("")) {
             Toast.makeText(this, "请输入用户名和密码！", Toast.LENGTH_SHORT).show();
@@ -98,9 +103,34 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onNext(Result<List<Role>> roleResult) {
                         LoginInfo.sRole = roleResult.getData().get(0);
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
+
+                        LoginInfo.sYWIMKit = YWAPI.getIMKitInstance(username, "23653358");
+
+                        final IYWLoginService loginService = LoginInfo.sYWIMKit.getLoginService();
+
+                        YWLoginParam loginParam = YWLoginParam.createLoginParam(username, password);
+
+                        loginService.login(loginParam, new IWxCallback() {
+
+                            @Override
+                            public void onSuccess(Object... arg0) {
+                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
+                            }
+
+                            @Override
+                            public void onProgress(int arg0) {
+                                // TODO Auto-generated method stub
+                            }
+
+                            @Override
+                            public void onError(int errCode, String description) {
+                                //如果登录失败，errCode为错误码,description是错误的具体描述信息
+                            }
+                        });
                     }
                 });
+
+
     }
 }
