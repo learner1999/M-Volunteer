@@ -2,6 +2,7 @@ package cn.zheteng123.m_volunteer.application;
 
 import android.app.Application;
 
+import com.alibaba.mobileim.YWAPI;
 import com.baidu.mapapi.SDKInitializer;
 
 /**
@@ -17,5 +18,8 @@ public class MyApplication extends Application {
 
         // 初始化百度地图 sdk
         SDKInitializer.initialize(getApplicationContext());
+
+        // 初始化阿里云旺 sdk
+        YWAPI.init(this, "23653358");
     }
 }

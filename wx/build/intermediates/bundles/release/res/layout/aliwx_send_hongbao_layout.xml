@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4EE"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        style="@style/aliwx_common_title_style"
+        android:background="@color/aliwx_hongbao_title_bg_color">
+
+        <TextView
+            android:id="@+id/title_back"
+            style="@style/aliwx_common_title_left_btn_shadow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@null"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:text="@string/aliwx_close"
+            android:textColor="@color/aliwx_hongbao_title_text_color"
+            android:textSize="@dimen/aliwx_font_second_grade" />
+
+        <TextView
+            android:id="@+id/title_button"
+            style="@style/aliwx_common_title_right_btn_shadow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aliwx_cancel"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/aliwx_self_title_text_shadow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:includeFontPadding="false"
+            android:text="发红包"
+            android:textColor="@color/aliwx_hongbao_title_text_color" />
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aliwx_white">
+
+        <LinearLayout
+            android:id="@+id/hongbao_tab_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/luck_hongbao_button_layout"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/luck_hongbao_button"
+                    android:layout_width="123dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="拼手气红包"
+                    android:textColor="@color/aliwx_third_text_color"
+                    android:textSize="@dimen/aliwx_font_second_grade" />
+
+                <View
+                    android:id="@+id/luck_hongbao_button_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@+id/luck_hongbao_button"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/luck_hongbao_button" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:background="#dcdde3" />
+
+
+            <RelativeLayout
+                android:id="@+id/normal_hongbao_button_layout"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/normal_hongbao_button"
+                    android:layout_width="123dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="普通红包"
+                    android:textColor="@color/aliwx_third_text_color"
+                    android:textSize="@dimen/aliwx_font_second_grade" />
+
+                <View
+                    android:id="@+id/normal_hongbao_button_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_alignLeft="@id/normal_hongbao_button"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@id/normal_hongbao_button"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/aliwx_common_line_color" />
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/hongbao_type_hint_tv"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="普通红包，每人抢到的红包金额相同" />
+
+
+    <RelativeLayout
+        android:id="@+id/hongbao_num_layout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/aliwx_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="红包个数"
+            android:textColor="@color/aliwx_color_n2_4"
+            android:textSize="@dimen/aliwx_common_text_size" />
+
+
+        <TextView
+            android:id="@+id/hongbao_num_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="个"
+            android:textColor="@color/aliwx_color_n2_4"
+            android:textSize="@dimen/aliwx_common_text_size" />
+
+        <EditText
+            android:id="@+id/hongbao_num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/hongbao_num_unit_tv"
+            android:background="@null"
+            android:hint="填写个数"
+            android:maxLength="30"
+            android:paddingRight="8dp"
+            android:textColor="@color/aliwx_color_n2_4"
+            android:textColorHint="@color/aliwx_color_gray_03"
+            android:textSize="@dimen/aliwx_common_text_size" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/hongbao_tribe_num_tv"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="本群共12人"
+        android:textColor="@color/aliwx_common_text_color3"
+        android:textSize="@dimen/aliwx_second_text_size" />
+
+
+    <RelativeLayout
+        android:id="@+id/hongbao_sum_layout"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/aliwx_white">
+
+        <TextView
+            android:id="@+id/hongbao_sum_hint_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:text="单个金额"
+            android:textColor="@color/aliwx_color_n2_4"
+            android:textSize="@dimen/aliwx_common_text_size" />
+
+
+        <TextView
+            android:id="@+id/hongbao_sum_unit_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="个"
+            android:textColor="@color/aliwx_color_n2_4"
+            android:textSize="@dimen/aliwx_common_text_size" />
+
+        <EditText
+            android:id="@+id/hongbao_sum_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/hongbao_sum_unit_tv"
+            android:background="@null"
+            android:hint="填写金额"
+            android:maxLength="30"
+            android:paddingRight="8dp"
+            android:textColor="@color/aliwx_color_n2_4"
+            android:textColorHint="@color/aliwx_color_gray_03"
+            android:textSize="@dimen/aliwx_common_text_size" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/hongbao_reetings_et"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="22dp"
+        android:layout_toLeftOf="@id/hongbao_sum_unit_tv"
+        android:background="@color/aliwx_white"
+        android:gravity="top"
+        android:hint="恭喜发财，大吉大利"
+        android:maxLength="30"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp"
+        android:textColor="@color/aliwx_color_n2_4"
+        android:textColorHint="@color/aliwx_color_gray_03"
+        android:textSize="@dimen/aliwx_common_text_size" />
+
+
+    <RelativeLayout
+        android:id="@+id/hongbao_send_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/hongbao_send_tv"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="发红包"
+            android:background="@color/aliwx_hongbao_title_bg_color"
+            android:textColor="@color/aliwx_white"
+            android:textSize="@dimen/aliwx_common_text_size" />
+
+
+        <TextView
+            android:id="@+id/hongbao_total_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="¥8888.00"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@id/hongbao_send_tv"
+            android:textColor="@color/aliwx_color_n2_4"
+            android:textSize="36sp" />
+
+
+
+        <TextView
+            android:id="@+id/hongbao_send_hint_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="未领取的红包,将于24小时候发起退款"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/aliwx_third_text_color"
+            android:textSize="@dimen/aliwx_second_text_size" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

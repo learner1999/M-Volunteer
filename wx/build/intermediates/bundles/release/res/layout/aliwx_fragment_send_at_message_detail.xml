@@ -1,0 +1,213 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF1F1F1">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_layout">
+        <RelativeLayout
+            android:id="@+id/default_title"
+            style="@style/aliwx_common_title_style" >
+
+            <TextView
+                android:id="@+id/chat_back"
+                style="@style/aliwx_common_title_left_btn_shadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="?attr/aliwx_title_left_text" />
+
+            <TextView
+                android:id="@+id/chat_title"
+                style="@style/aliwx_common_title_text_shadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:maxWidth="200dp"
+                android:paddingLeft="0dip"
+                android:paddingRight="0dip"
+                android:textSize="@dimen/aliwx_common_text_size" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/detail_content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/aliwx_bg_color_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/aliwx_font_third_grade"
+                    android:textColor="@color/aliwx_common_text_color3"
+                    android:text="@string/aliwx_send_at_msg_detail_content"/>
+
+                <TextView
+                    android:id="@+id/send_at_msg_content_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/aliwx_common_text_size"
+                    android:textColor="@color/aliwx_common_text_color"/>
+
+                <TextView
+                    android:id="@+id/send_at_msg_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/aliwx_font_third_grade"
+                    android:textColor="@color/aliwx_common_text_color3"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/aliwx_divider_color"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/read_unread_detail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/aliwx_bg_color_white">
+
+                    <TextView
+                        android:id="@+id/send_at_msg_unread_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/aliwx_common_text_color3"
+                        android:textSize="@dimen/aliwx_font_third_grade" />
+
+                    <TextView
+                        android:id="@+id/send_at_msg_at_again_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/aliwx_send_at_msg_detail_at_again"
+                        android:textColor="@color/aliwx_common_text_color_blue"
+                        android:textSize="@dimen/aliwx_font_third_grade"
+                        android:visibility="invisible" />
+                    <com.alibaba.mobileim.fundamental.widget.NoScrollGridView
+                        android:id="@+id/send_at_msg_unread_contact_gv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="15dp"
+                        android:columnWidth="55dp"
+                        android:horizontalSpacing="5dp"
+                        android:listSelector="@android:color/transparent"
+                        android:numColumns="auto_fit"
+                        android:verticalSpacing="20dp"
+                        android:layout_below="@id/send_at_msg_unread_title_tv"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/aliwx_bg_color_white"/>
+
+
+                <TextView
+                    android:id="@+id/send_at_msg_read_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/aliwx_font_third_grade"
+                    android:textColor="@color/aliwx_common_text_color3"/>
+
+                <com.alibaba.mobileim.fundamental.widget.NoScrollGridView
+                    android:id="@+id/send_at_msg_read_contact_gv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:numColumns="auto_fit"
+                    android:columnWidth="55dp"
+                    android:horizontalSpacing="5dp"
+                    android:verticalSpacing="20dp"
+                    android:listSelector="@android:color/transparent"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/loading_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@color/aliwx_bg_color_white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据获取中..."
+                android:textColor="@color/aliwx_color_gray_02"
+                android:textSize="@dimen/aliwx_common_text_size"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/load_failed_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@color/aliwx_bg_color_white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据获取失败,请"
+                android:textColor="@color/aliwx_color_gray_02"
+                android:textSize="@dimen/aliwx_common_text_size"/>
+            <TextView
+                android:id="@+id/at_detail_load_again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重新获取"
+                android:textColor="@color/aliwx_text_color_blue"
+                android:textSize="@dimen/aliwx_common_text_size"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

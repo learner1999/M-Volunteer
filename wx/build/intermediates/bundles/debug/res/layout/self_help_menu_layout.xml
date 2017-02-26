@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/self_help_menu_notify"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:layout_toRightOf="@+id/self_help_menu_text"
+        android:background="@drawable/aliwx_unread_hint"
+        android:layout_marginLeft="-6dp"
+        android:layout_marginBottom="-6dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/self_help_menu_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/self_help_menu_notify"
+        android:background="@drawable/service_win_menu_item_bg"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"
+        android:paddingTop="5dp"
+        android:text="店铺上新" />
+</RelativeLayout>

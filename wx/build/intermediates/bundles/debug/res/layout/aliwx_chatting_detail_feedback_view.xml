@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/aliwx_white">
+
+    <TextView
+        android:id="@+id/feedback_hint_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:text="请留下您的联系方式"
+        android:textColor="@color/aliwx_color_gray_01"
+        android:textSize="@dimen/aliwx_common_text_size" />
+
+    <ImageView
+        android:id="@+id/feedback_right_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/aliwx_icon_write" />
+
+    <TextView
+        android:id="@+id/feedback_phone_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="42dp"
+        android:layout_toRightOf="@id/feedback_hint_tv"
+        android:background="@drawable/feedback_bg"
+        android:includeFontPadding="false"
+        android:paddingBottom="4dp"
+        android:singleLine="true"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="4dp"
+        android:text="11242345234"
+        android:textColor="@color/aliwx_color_blue_dark"
+        android:textSize="@dimen/aliwx_common_text_size"
+         />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="#eeeeee" />
+
+</RelativeLayout>

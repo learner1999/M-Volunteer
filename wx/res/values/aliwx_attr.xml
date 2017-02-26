@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <attr name="aliwx_title_backgroud" format="reference" />
+    <attr name="aliwx_title_textcolor" format="reference" />
+    <attr name="aliwx_title_textsize" format="reference" />
+    <attr name="aliwx_bg_color" format="reference" />
+    <!-- 最近联系人页面 -->
+    <attr name="aliwx_divider_color" format="reference" />
+    <attr name="aliwx_divider_height" format="reference" />
+    <attr name="aliwx_cvsnname_textsize" format="reference" />
+    <attr name="aliwx_cvsname_textcolor" format="reference" />
+    <attr name="aliwx_cvscontent_textsize" format="reference" />
+    <attr name="aliwx_cvscontent_textcolor" format="reference" />
+    <attr name="aliwx_cvstime_textsize" format="reference" />
+    <attr name="aliwx_cvstime_textcolor" format="reference" />
+    <attr name="aliwx_title_leftbutton_visible" format="reference" />
+    <!-- 聊天页面 -->
+    <attr name="aliwx_chatcontent_left_textcolor" format="reference" />
+    <attr name="aliwx_chatcontent_left_textsize" format="reference" />
+    <attr name="aliwx_chatcontent_right_textcolor" format="reference" />
+    <attr name="aliwx_chatcontent_right_textsize" format="reference" />
+     <attr name="aliwx_chattime_bg" format="reference" />
+    <attr name="aliwx_title_rightbutton_visible" format="reference" />
+    <attr name="aliwx_title_left_text" format="reference" />
+    <attr name="aliwx_title_left_textsize" format="reference" />
+    <attr name="aliwx_title_left_textcolor" format="reference" />
+    <attr name="aliwx_title_left_icon" format="reference" />
+    <attr name="aliwx_chatbottom_bg" format="reference" />
+    <attr name="aliwx_chatbottom_expand" format="reference" />
+    <attr name="aliwx_chatbottom_smily" format="reference" />
+    <attr name="aliwx_chatbottom_record" format="reference" />
+    <attr name="aliwx_comment_left_bg" format="reference" />
+    <attr name="aliwx_comment_right_bg" format="reference" />
+    <attr name="aliwx_record_btn_bg" format="reference" />
+    
+    <declare-styleable name="ChattingSelfHelpMenuBar">
+        <attr name="menuTextSize" format="reference|integer"/>
+        <attr name="subMenuTextSize" format="reference|integer"/>
+        <attr name="menuTextColor" format="reference"/>
+        <attr name="subMenuTextColor" format="reference"/>
+        <attr name="subMenuMaxTextLength" format="reference|integer"/>
+        <attr name="menuMaxTextLength" format="reference|integer"/>
+    </declare-styleable>
+    <declare-styleable name="aliwx_PullToRefresh">
+        <attr name="aliwx_ptrShowIndicator" format="reference|boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ShaderImageView">
+        <attr name="siArrowPosition"/>
+    </declare-styleable>
+
+    <attr name="siArrowPosition">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+
+    <declare-styleable name="SelfHelpMenuItem">
+        <attr name="menuItemTextColor" format="reference|color"/>
+        <attr name="menuItemTextSize" format="dimension|integer"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:measureWithLargestChild="true"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/Lin"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:alpha="50"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:measureWithLargestChild="false" >
+
+        <View
+            android:id="@+id/floatball"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/myself_icn_dw"
+            android:textColor="#403A3B" />
+    </LinearLayout>
+
+</LinearLayout>

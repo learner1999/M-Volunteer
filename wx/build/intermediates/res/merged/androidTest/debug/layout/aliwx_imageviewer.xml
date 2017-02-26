@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:drawable/screen_background_dark">
+
+    <com.alibaba.mobileim.fundamental.widget.TouchImageView
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/aliwx_app_name" />
+
+    <FrameLayout
+        android:id="@+id/title"
+        style="@style/aliwx_common_title_style"
+        android:background="@color/aliwx_color_blue_dark">
+
+        <TextView
+            android:id="@+id/title_back"
+            style="@style/aliwx_common_title_left_btn_shadow_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="@color/aliwx_color_white"
+            android:paddingRight="40dp"
+            android:text="" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/aliwx_button_parent_right_margin">
+
+            <TextView
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/selected_count"
+                android:layout_marginLeft="6dp"
+                android:layout_centerVertical="true"
+                android:layout_alignWithParentIfMissing="true"
+                android:focusable="false"
+                android:singleLine="true"
+                android:text="@string/aliwx_send"
+                android:textColor="@color/aliwx_color_blue"
+                android:textSize="@dimen/aliwx_font_first_grade"/>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/movieLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/title"
+        android:layout_above="@+id/bottom_original_image_layout"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <com.alibaba.mobileim.fundamental.widget.GifView
+            android:id="@+id/movieView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <ZoomControls
+        android:id="@+id/zoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2.0dip"
+        android:orientation="horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_original_image_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/aliwx_bottom_bar_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/aliwx_color_blue_dark">
+
+        <RelativeLayout
+            android:id="@+id/original_image_check_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/aliwx_send_original_check_left_margin">
+
+            <ImageView
+                android:id="@+id/send_original_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="1dp"
+                android:gravity="center"
+                android:src="@drawable/aliwx_send_original_btn_off"/>
+
+            <TextView
+                android:id="@+id/send_original"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/aliwx_send_original_check_right_margin"
+                android:layout_toRightOf="@+id/send_original_check"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="原图"
+                android:textColor="@color/aliwx_color_gray_02"
+                android:textSize="@dimen/aliwx_font_first_grade"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

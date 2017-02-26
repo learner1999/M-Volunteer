@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/aliwx_bg_color_white"
+    tools:context="com.alibaba.mobileim.ui.atmessage.AtMsgListFragment">
+
+    <TextView
+        android:id="@+id/mark_all_read"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:textSize="@dimen/aliwx_common_text_size"
+        android:textColor="@color/aliwx_at_msg_mark_all_read_text_color"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:text="@string/aliwx_at_message_mark_all_read"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/mark_all_read"
+        android:background="@color/aliwx_divider_color"
+        android:visibility="gone"/>
+
+    <com.alibaba.mobileim.fundamental.widget.refreshlist.PullToRefreshListView
+        android:id="@+id/at_msg_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_alignWithParentIfMissing="true"
+        android:listSelector="@android:color/transparent"
+        android:layout_above="@id/divider"
+        android:layoutAnimation="@anim/aliwx_at_msg_list_layout_anim">
+    </com.alibaba.mobileim.fundamental.widget.refreshlist.PullToRefreshListView>
+
+    <RelativeLayout
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="115dp"
+            android:layout_marginTop="130dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/emptystate_empty_image"/>
+        <TextView
+            android:id="@+id/at_msg_load_label"
+            android:layout_below="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#B3B3B3"
+            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+            android:text="还没有@消息"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

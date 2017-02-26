@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--以下为会话列表item相关dimens-->
+
+    <!--item高度-->
+    <dimen name="aliwx_conversation_item_height">70dp</dimen>
+    <!--头像大小-->
+    <dimen name="aliwx_conversation_head_size">44dp</dimen>
+
+    <!--未读消息小红点大小-->
+    <dimen name="aliwx_conversation_unread_msg_icon_size">17dp</dimen>
+
+
+    <!--头像距离顶部边距-->
+    <dimen name="aliwx_conversation_head_margin_top">15dp</dimen>
+
+    <!--会话名称高度-->
+    <dimen name="aliwx_conversation_head_name_height">21dp</dimen>
+
+    <!--头像距离左侧边距-->
+    <dimen name="aliwx_conversation_head_margin_left">16dp</dimen>
+    <!--未读数图标距离左侧边距-->
+    <dimen name="aliwx_conversation_unread_icon_margin_left">50dp</dimen>
+    <!--未读数图标距离上方边距-->
+    <dimen name="aliwx_conversation_unread_icon_margin_top">8dp</dimen>
+    <!--title距离上方边距-->
+    <dimen name="aliwx_conversation_title_margin_top">15dp</dimen>
+    <!--title距离左侧头像边距-->
+    <dimen name="aliwx_conversation_title_margin_left">14dp</dimen>
+    <!--title距离右侧边距-->
+    <dimen name="aliwx_conversation_title_margin_right">12dp</dimen>
+    <!--title字体大小-->
+    <dimen name="aliwx_conversation_title_text_size">16sp</dimen>
+    <!--最近消息内容距离左侧边距-->
+    <dimen name="aliwx_conversation_content_layout_margin_left">14dp</dimen>
+    <!--最近消息内容距离右侧边距-->
+    <dimen name="aliwx_conversation_content_layout_margin_right">65dp</dimen>
+    <!--最近消息内容距离顶部边距-->
+    <dimen name="aliwx_conversation_content_layout_margin_top">33dp</dimen>
+    <!--最近消息内容上部padding-->
+    <dimen name="aliwx_conversation_content_layout_padding_top">0dp</dimen>
+    <!--最近消息内容底部padding-->
+    <dimen name="aliwx_conversation_content_layout_padding_bottom">0dp</dimen>
+    <!--&lt;!&ndash;消息内容高度&ndash;&gt;-->
+    <!--<dimen name="aliwx_conversation_content_layout_height">16dp</dimen>-->
+    <!--最近消息内容字体大小-->
+    <dimen name="aliwx_conversation_content_text_size">14sp</dimen>
+    <!--接收不提醒会话的未读标识距离左侧边距-->
+    <dimen name="aliwx_conversation_receive_not_remind_unread_icon_margin_left">54dp</dimen>
+    <!--接收不提醒会话的未读标识距离上方边距-->
+    <dimen name="aliwx_conversation_receive_not_remind_unread_icon_margin_top">11dp</dimen>
+
+    <!--时间高度-->
+    <dimen name="aliwx_conversation_time_height">14dp</dimen>
+    <!--时间距离上方边距-->
+    <dimen name="aliwx_conversation_time_margin_top">0dp</dimen>
+    <!--时间距离右侧边距-->
+    <dimen name="aliwx_conversation_time_margin_right">12dp</dimen>
+    <!--时间字体大小-->
+    <dimen name="aliwx_conversation_time_text_size">12sp</dimen>
+    <!--分割线距离左侧边距-->
+    <dimen name="aliwx_conversation_divider_margin_left">74dp</dimen>
+    <!--分割线距离右侧边距-->
+    <dimen name="aliwx_conversation_divider_margin_right">0dp</dimen>
+    <!--分割线高度-->
+    <dimen name="aliwx_conversation_divider_height">0.5dp</dimen>
+
+
+    <dimen name="aliwx_search_text_size">14sp</dimen>
+
+    <!-- *********************************我是分割线, 以下是聊天窗口自定义dimens********************************* -->
+
+    <!--消息最小高度-->
+    <dimen name="aliwx_chatting_content_min_height">40dp</dimen>
+    <!--消息item左侧padding-->
+    <dimen name="aliwx_chatting_padding_left">14dp</dimen>
+    <!--消息item右侧padding-->
+    <dimen name="aliwx_chatting_padding_right">14dp</dimen>
+    <!--消息item底部padding-->
+    <dimen name="aliwx_chatting_padding_bottom">20dp</dimen>
+    <!--头像大小-->
+    <dimen name="aliwx_chatting_head_size">40dp</dimen>
+
+
+    <!--左侧用户昵称距离左侧边距-->
+    <dimen name="aliwx_chatting_left_name_margin_left">15dp</dimen>
+    <!--左侧用户昵称距离右侧边距-->
+    <dimen name="aliwx_chatting_left_name_margin_right">36dp</dimen>
+    <!--左侧用户昵称距离底部边距-->
+    <dimen name="aliwx_chatting_left_name_margin_bottom">2dp</dimen>
+    <!--左侧用户昵称字体大小-->
+    <dimen name="aliwx_chatting_left_name_text_size">12sp</dimen>
+    <!--左侧消息气泡距离左侧头像距离-->
+    <dimen name="aliwx_chatting_left_content_margin_left">8dp</dimen>
+    <!--左侧消息气泡距离右侧边距-->
+    <dimen name="aliwx_chatting_left_content_margin_right">36dp</dimen>
+    <!--左侧文本消息字体大小-->
+    <dimen name="aliwx_chatting_left_content_text_size">15sp</dimen>
+    <!--右侧用户昵称距离左侧边距-->
+    <dimen name="aliwx_chatting_right_name_margin_left">36dp</dimen>
+    <!--右侧用户昵称距离右侧边距-->
+    <dimen name="aliwx_chatting_right_name_margin_right">15dp</dimen>
+    <!--右侧用户昵称距离底部边距-->
+    <dimen name="aliwx_chatting_right_name_margin_bottom">2dp</dimen>
+    <!--右侧用户昵称字体大小-->
+    <dimen name="aliwx_chatting_right_name_text_size">12sp</dimen>
+    <!--右侧消息气泡距离左侧距离-->
+    <dimen name="aliwx_chatting_right_content_margin_left">36dp</dimen>
+    <!--右侧消息气泡距离右侧头像距离-->
+    <dimen name="aliwx_chatting_right_content_margin_right">8dp</dimen>
+    <!--右侧文本消息字体大小-->
+    <dimen name="aliwx_chatting_right_content_text_size">16sp</dimen>
+    <!--系统消息字体大小-->
+    <dimen name="aliwx_chatting_system_message_text_size">12sp</dimen>
+    <!--置顶会话顶部间隔-->
+    <dimen name="aliwx_top_conversation_divider_height">12dp</dimen>
+    <!--名字和头像的高度差-->
+    <dimen name="aliwx_topMargin_between_head_and_name">6dp</dimen>
+
+
+
+    <!-- *********************************我是分割线, 以下是聊天窗口自定义color********************************* -->
+    <!--聊天窗口背景色-->
+    <color name="aliwx_chatting_background_color">#f9f9f9</color>
+    <!--系统消息背景色-->
+    <color name="aliwx_chatting_system_message_background_color">#d0d0d0</color>
+    <!--回复框背景色-->
+    <color name="aliwx_chatting_reply_bar_background_color">#F7F8FA</color>
+    <!--点击加号后的扩展区域背景色-->
+    <color name="aliwx_chatting_expand_view_background_color">#ffffff</color>
+    
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

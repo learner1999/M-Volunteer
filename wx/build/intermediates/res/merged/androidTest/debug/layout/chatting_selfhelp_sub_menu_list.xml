@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:showDividers="middle"
+    android:divider="@drawable/aliwx_horizontal_divider_line"
+    android:background="@drawable/aliwx_self_help_menu_pop_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+</LinearLayout>

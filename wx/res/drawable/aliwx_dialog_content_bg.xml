@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle" >
+
+    <!-- 实心 -->
+
+    <solid android:color="@color/aliwx_common_bg_white_color" />
+    <!-- 圆角 -->
+
+    <corners
+        android:topLeftRadius="7dip"
+        android:topRightRadius="7dip" />
+
+</shape>

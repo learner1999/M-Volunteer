@@ -1,0 +1,538 @@
+[
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_from.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_from.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_audio_unread.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_audio_unread.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_title_self_state.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_title_self_state.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_empty_head_imageview.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_empty_head_imageview.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_fragment_send_at_message_detail.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_fragment_send_at_message_detail.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_multi_image_player.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_multi_image_player.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_cloud_chat_pwd_dialog.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_cloud_chat_pwd_dialog.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_message.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_message.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\self_help_menu_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\self_help_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_image_left.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_image_left.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_webview_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_webview_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_message_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_message_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_feedback_edit_view.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_feedback_edit_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_search_text.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_search_text.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_gif_smily_show_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_gif_smily_show_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_feedback_view.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_feedback_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_common_popup_bg.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_common_popup_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tribe_member_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tribe_member_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_phrase_list.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_phrase_list.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_geo.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_geo.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_select_dialog_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_select_dialog_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_fast_send_photo_popup_window_cover.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_fast_send_photo_popup_window_cover.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_activity_videoplayer.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_activity_videoplayer.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_send_at_msg_detail_contact_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_send_at_msg_detail_contact_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_gif_smily_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_gif_smily_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_receive_state.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_receive_state.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_show_gif_progress.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_show_gif_progress.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_send_hongbao_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_send_hongbao_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_custom_item_without_head.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_custom_item_without_head.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_default_chatting_title.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_default_chatting_title.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_fast_send_photo_popup_window.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_fast_send_photo_popup_window.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\chatting_selfhelp_sub_menu_list.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\chatting_selfhelp_sub_menu_list.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_self_menu.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_self_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_download_video_progress.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_download_video_progress.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\chatting_selfhelp_sub_menu_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\chatting_selfhelp_sub_menu_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_member_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_member_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_multi_pick_gallery.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_multi_pick_gallery.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_cloud_pwd_settting_hint.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_cloud_pwd_settting_hint.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\activity_float_view.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\activity_float_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_pull_down_refresh_toast.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_pull_down_refresh_toast.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_self_help_menu_click_progress_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_self_help_menu_click_progress_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_left_from.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_left_from.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_conversation_custom_view_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_conversation_custom_view_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_list.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_list.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_select_dialog_singlechoice.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_select_dialog_singlechoice.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\chatting_selfhelp_menu_bar.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\chatting_selfhelp_menu_bar.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_at_message_receive_item_title.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_at_message_receive_item_title.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_activity_at_msg_list.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_activity_at_msg_list.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_sliding_tab_send.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_sliding_tab_send.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_multi_pick_album.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_multi_pick_album.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_pull_to_refresh_header_1.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_pull_to_refresh_header_1.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_smiley_indicator_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_smiley_indicator_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_horizontal_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_horizontal_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_at_message_receive_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_at_message_receive_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_upload_video_progress.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_upload_video_progress.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tooltip_chatwindow_rec_text.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tooltip_chatwindow_rec_text.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_bottom_selfhelp_menu_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_bottom_selfhelp_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_smily.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_smily.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_smiley_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_smiley_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tooltip_chatwindow_2.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tooltip_chatwindow_2.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_enlarge_enhanced_text_activity.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_enlarge_enhanced_text_activity.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_first_new_msg_notify.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_first_new_msg_notify.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tooltip_chatwindow.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tooltip_chatwindow.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_msg_unread_count.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_msg_unread_count.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_feedback.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_feedback.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tribe_member_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tribe_member_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_activity_send_at_msg_detail.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_activity_send_at_msg_detail.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_list_dialog_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_list_dialog_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_text_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_text_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_select_dialog_multichoice.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_select_dialog_multichoice.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_list_dialog_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_list_dialog_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_audio_flipper_to.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_audio_flipper_to.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_pull_to_refresh_header.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_pull_to_refresh_header.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_image_detail_fragment.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_image_detail_fragment.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_enlarge_enhanced_text.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_enlarge_enhanced_text.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_smiley_detail_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_smiley_detail_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_custom_msg.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_custom_msg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_audio_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_audio_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_send_state.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_send_state.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_download_image_progress.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_download_image_progress.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_record_dialog.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_record_dialog.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_reply_bar_select.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_reply_bar_select.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_multi_pick_album_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_multi_pick_album_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_select_dialog.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_select_dialog.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tooltip_head.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tooltip_head.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_contacts_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_contacts_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_fragment_at_msg_list.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_fragment_at_msg_list.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_expand_view_pager_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_expand_view_pager_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_video_chat_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_video_chat_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_multi_pick_gallery_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_multi_pick_gallery_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_custom_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_custom_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_left_right_head.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_left_right_head.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_alert_dialog.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_alert_dialog.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tooltip_popwindows.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tooltip_popwindows.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\float_ball.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\float_ball.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_image_view.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_image_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_contacts_header_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_contacts_header_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_left_name.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_left_name.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_common_simple_title.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_common_simple_title.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_image_right.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_image_right.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_tooltip_chatwindow_rec_funbar.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_tooltip_chatwindow_rec_funbar.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_viewlet_remote_user.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_viewlet_remote_user.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_item_video_size_stub.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_item_video_size_stub.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\self_help_menu_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\self_help_menu_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_smily_radio.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_smily_radio.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_audio_flipper_from.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_audio_flipper_from.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_flex_grid_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_flex_grid_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_imageview.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_imageview.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_gif.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_gif.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_check_code.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_check_code.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_message_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_message_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_at_message_send_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_at_message_send_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_grid.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_grid.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_sliding_tab_receive.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_sliding_tab_receive.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_image_text_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_image_text_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_item_sendstate.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_item_sendstate.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_download_video_init.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_download_video_init.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_cloud_auto_reply_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_cloud_auto_reply_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_title_bar_shadow.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_title_bar_shadow.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\self_help_menu_bar_new.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\self_help_menu_bar_new.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_imageviewer.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_imageviewer.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_enter_chatting_room_layout.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_enter_chatting_room_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_vertical_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_vertical_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_smily_delete_button.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_smily_delete_button.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_fragment_contacts.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_fragment_contacts.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_smily_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_smily_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_item_focus_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_item_focus_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_item_leftname.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_item_leftname.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_template_flow_item.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_template_flow_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_play_video_btn.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_play_video_btn.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\aliwx_chatting_detail_item_time.xml",
+        "source": "D:\\AndroidStudioProjects\\M-Volunteer\\wx\\build\\intermediates\\bundles\\debug\\res\\layout\\aliwx_chatting_detail_item_time.xml"
+    }
+]

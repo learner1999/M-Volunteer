@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="54dp"
+            android:layout_height="fill_parent"
+            android:paddingBottom="7dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="7dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/aliwx_common_back_btn_bg_white" />
+    </RelativeLayout>
+
+    <com.alibaba.mobileim.kit.video.view.SquareFrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true" >
+
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/img_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:layout_centerInParent="true" />
+        
+        <ImageView
+            android:id="@+id/iv_playbutton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@drawable/aliwx_player_playbtn"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+    </com.alibaba.mobileim.kit.video.view.SquareFrameLayout>
+
+    <ViewStub
+        android:id="@+id/download_video_init_stub"
+        android:inflatedId="@+id/download_init_progress"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout="@layout/aliwx_chatting_detail_download_video_init"/>
+
+    <ViewStub
+        android:id="@+id/download_video_progress_stub"
+        android:inflatedId="@+id/download_video_progress"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:padding="3dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout="@layout/aliwx_chatting_detail_download_video_progress"/>
+
+
+    <ImageView
+        android:id="@+id/aliwx_download_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:src="@drawable/aliwx_download_video_fail"
+        android:visibility="gone"
+        />
+    <ViewStub
+        android:id="@+id/whole_cover_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/whole_cover"
+        android:layout="@layout/aliwx_fast_send_photo_popup_window_cover"/>
+
+</RelativeLayout>
