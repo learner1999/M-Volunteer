@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">M-Volunteer</string>
+    <string name="app_name">美志愿</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="username">账号</string>
@@ -40,6 +40,7 @@
     <string name="organization_info"><![CDATA[组织信息 >]]></string>
     <string name="tribe">群组</string>
     <string name="circle">圈子</string>
+    <string name="interview_manage">面试管理</string>
     <string-array name="service_type">
         <item>青少年服务</item>
         <item>敬老助残</item>
