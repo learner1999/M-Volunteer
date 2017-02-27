@@ -4,4 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="layoutBackground">#EDEDED</color>
+
+
+    <color name="transparent">#00000000</color>
+    <color name="txt_black">#232323</color>
+    <color name="bg_agray">#49dddddd</color>
+    <color name="bg_gray_pressed">#e8e8e8</color>
+    <color name="txt_gray">#565656</color>
+    <color name="white">#ffffff</color>
+    <color name="txt_light_gray">#898989</color>
+    <color name="divider_gray">#d7d7d7</color>
 </resources>

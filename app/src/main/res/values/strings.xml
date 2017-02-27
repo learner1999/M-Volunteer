@@ -39,6 +39,7 @@
     <string name="my_member">我的成员</string>
     <string name="organization_info"><![CDATA[组织信息 >]]></string>
     <string name="tribe">群组</string>
+    <string name="circle">圈子</string>
     <string-array name="service_type">
         <item>青少年服务</item>
         <item>敬老助残</item>

@@ -16,6 +16,7 @@ import java.util.List;
 
 import cn.zheteng123.m_volunteer.R;
 import cn.zheteng123.m_volunteer.customview.MyViewPager;
+import cn.zheteng123.m_volunteer.ui.circle.CircleFragment;
 import cn.zheteng123.m_volunteer.ui.home.HomeFragment;
 import cn.zheteng123.m_volunteer.ui.main.adapter.ViewPagerAdapter;
 import cn.zheteng123.m_volunteer.ui.organization_center.OrganizationCenterFragment;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         // mFragmentList.add(contactsFragment);
         SignInFragment signInFragment = new SignInFragment();
         mFragmentList.add(signInFragment);
+        CircleFragment circleFragment = new CircleFragment();
+        mFragmentList.add(circleFragment);
         if (LoginInfo.sRole.getName().equals("volunteer")) {
             UserCenterFragment userCenterFragment = new UserCenterFragment();
             mFragmentList.add(userCenterFragment);
