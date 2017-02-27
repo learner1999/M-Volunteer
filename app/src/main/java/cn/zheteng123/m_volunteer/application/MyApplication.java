@@ -8,6 +8,7 @@ import com.alibaba.mobileim.aop.PointCutEnum;
 import com.alibaba.wxlib.util.SysUtil;
 import com.baidu.mapapi.SDKInitializer;
 
+import cn.zheteng123.m_volunteer.ui.aliyunwang.ChattingUICustom;
 import cn.zheteng123.m_volunteer.ui.aliyunwang.ConversationListUICustom;
 
 /**
@@ -38,5 +39,6 @@ public class MyApplication extends Application {
         }
 
         AdviceBinder.bindAdvice(PointCutEnum.CONVERSATION_FRAGMENT_UI_POINTCUT, ConversationListUICustom.class);
+        AdviceBinder.bindAdvice(PointCutEnum.CHATTING_FRAGMENT_UI_POINTCUT, ChattingUICustom.class);
     }
 }
