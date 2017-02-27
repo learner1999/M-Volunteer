@@ -1,9 +1,12 @@
 package cn.zheteng123.m_volunteer.ui.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +29,7 @@ import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.Token;
 import cn.zheteng123.m_volunteer.entity.login.Role;
+import cn.zheteng123.m_volunteer.ui.chooserole.ChooseRoleActivity;
 import cn.zheteng123.m_volunteer.ui.main.MainActivity;
 import cn.zheteng123.m_volunteer.util.LoginInfo;
 import rx.Observable;
@@ -47,6 +51,9 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.et_password)
     EditText mEtPassword;
 
+    @BindView(R.id.btn_register)
+    Button mBtnRegister;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +71,17 @@ public class LoginActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        initListener();
+    }
 
+    private void initListener() {
+        mBtnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ChooseRoleActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @OnClick(R.id.btn_login)
@@ -84,6 +101,14 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public Observable<Result<List<Role>>> call(Token token) {
                         LoginInfo.token = token.getAccessToken();
+
+
+                        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this).edit();
+                        editor.putString("token", LoginInfo.token);
+                        editor.putString("username", username);
+                        editor.putString("password", password);
+                        editor.apply();
+
                         return Networks.getInstance().getLoginApi().getUserRoles();
                     }
                 })
@@ -102,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(Result<List<Role>> roleResult) {
+
                         LoginInfo.sRole = roleResult.getData().get(0);
 
                         LoginInfo.sYWIMKit = YWAPI.getIMKitInstance(username, "23653358");
@@ -132,5 +158,10 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
 
+    }
+
+    public static void actionStart(Context context) {
+        Intent intent = new Intent(context, LoginActivity.class);
+        context.startActivity(intent);
     }
 }
