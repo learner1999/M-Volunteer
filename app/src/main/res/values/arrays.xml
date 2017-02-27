@@ -10,4 +10,10 @@
         <item>正在审核</item>
         <item>等待邮寄</item>
     </array>
+
+    <array name="interview_status">
+        <item>等待面试</item>
+        <item>面试通过</item>
+        <item>面试失败</item>
+    </array>
 </resources>

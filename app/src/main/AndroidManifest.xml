@@ -75,6 +75,8 @@
         </activity>
         <activity android:name=".ui.member_manage.MemberActivity">
         </activity>
+        <activity android:name=".ui.interview_manage.InterviewManageActivity">
+        </activity>
     </application>
 
 </manifest>

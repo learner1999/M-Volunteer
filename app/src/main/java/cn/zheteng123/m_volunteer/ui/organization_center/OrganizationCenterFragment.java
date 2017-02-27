@@ -19,6 +19,7 @@ import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.organization.OrganizationEntity;
 import cn.zheteng123.m_volunteer.ui.activity_manage.ManageActivity;
+import cn.zheteng123.m_volunteer.ui.interview_manage.InterviewManageActivity;
 import cn.zheteng123.m_volunteer.ui.member_manage.MemberActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Subscriber;
@@ -43,6 +44,9 @@ public class OrganizationCenterFragment extends Fragment {
 
     @BindView(R.id.tv_organization_name)
     TextView mTvOrganizationName;
+
+    @BindView(R.id.ll_interview_manage)
+    LinearLayout mLlInterviewManage;
 
     @Nullable
     @Override
@@ -95,6 +99,13 @@ public class OrganizationCenterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MemberActivity.actionStart(getActivity());
+            }
+        });
+
+        mLlInterviewManage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                InterviewManageActivity.actionStart(getActivity());
             }
         });
     }
