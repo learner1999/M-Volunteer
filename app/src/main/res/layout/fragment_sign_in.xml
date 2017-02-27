@@ -52,7 +52,7 @@
     </LinearLayout>
     <!--标题栏结束-->
 
-    <com.baidu.mapapi.map.MapView
+    <com.baidu.mapapi.map.TextureMapView
         android:id="@+id/bmapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

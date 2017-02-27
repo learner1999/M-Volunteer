@@ -27,8 +27,8 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.InfoWindow;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
-import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.TextureMapView;
 import com.baidu.mapapi.model.LatLng;
 
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
     View mViewStatusBarFixer;
 
     @BindView(R.id.bmapView)
-    MapView mMapView;
+    TextureMapView mMapView;
 
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = this;
@@ -114,7 +114,7 @@ public class SignInFragment extends BaseFrameFragment<SignInPresenter, SignInMod
         super.onDestroy();
 
         // 同时销毁地图
-        mMapView.onDestroy();
+        // mMapView.onDestroy();
     }
 
     @Override
