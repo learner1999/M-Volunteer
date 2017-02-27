@@ -10,6 +10,7 @@ import com.baidu.mapapi.SDKInitializer;
 
 import cn.zheteng123.m_volunteer.ui.aliyunwang.ChattingUICustom;
 import cn.zheteng123.m_volunteer.ui.aliyunwang.ConversationListUICustom;
+import cn.zheteng123.m_volunteer.ui.aliyunwang.IMConversationListOperationCustom;
 
 /**
  * Created on 2017/2/19.
@@ -40,5 +41,6 @@ public class MyApplication extends Application {
 
         AdviceBinder.bindAdvice(PointCutEnum.CONVERSATION_FRAGMENT_UI_POINTCUT, ConversationListUICustom.class);
         AdviceBinder.bindAdvice(PointCutEnum.CHATTING_FRAGMENT_UI_POINTCUT, ChattingUICustom.class);
+        AdviceBinder.bindAdvice(PointCutEnum.CONVERSATION_FRAGMENT_OPERATION_POINTCUT, IMConversationListOperationCustom.class);
     }
 }
