@@ -18,6 +18,6 @@
         title="圈子" />
     <tab
         id="@+id/tab_ranking_list"
-        icon="@drawable/icon_ranking_list"
-        title="榜单" />
+        icon="@drawable/icon_user"
+        title="我的" />
 </tabs>
