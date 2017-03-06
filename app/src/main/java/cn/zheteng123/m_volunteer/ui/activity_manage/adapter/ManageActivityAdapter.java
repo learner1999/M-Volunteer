@@ -72,7 +72,7 @@ public class ManageActivityAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final ManageActivityEntity manageActivityEntity = getItem(position);
 
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_manage_activity, parent, false);
             viewHolder = new ViewHolder(convertView);
@@ -96,8 +96,7 @@ public class ManageActivityAdapter extends BaseAdapter {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 TextView textView = (TextView) view;
                 textView.setTextColor(Color.WHITE);
-                if (bFirst) {
-                    bFirst = false;
+                if (viewHolder.spinnerRecruitStatus.getSelectedItem().toString().equals(manageActivityEntity.getDescription())) {
                     return;
                 }
                 Networks

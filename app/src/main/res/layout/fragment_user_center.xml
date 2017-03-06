@@ -278,6 +278,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/shape_logout_button"

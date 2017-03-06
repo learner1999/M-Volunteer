@@ -1,11 +1,14 @@
 package cn.zheteng123.m_volunteer.ui.user_center;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +23,7 @@ import cn.zheteng123.m_volunteer.api.Networks;
 import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.user_center.VolunteerEntity;
 import cn.zheteng123.m_volunteer.ui.certificate.CertificateActivity;
+import cn.zheteng123.m_volunteer.ui.login.LoginActivity;
 import cn.zheteng123.m_volunteer.ui.my_activity.MyActivityActivity;
 import cn.zheteng123.m_volunteer.ui.service_record.ServiceRecordActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -53,6 +57,9 @@ public class UserCenterFragment extends Fragment {
 
     @BindView(R.id.ll_apply_for_certificate)
     LinearLayout mLlApplyForCertificate;
+
+    @BindView(R.id.btn_logout)
+    Button mBtnLogout;
 
     @Nullable
     @Override
@@ -122,6 +129,19 @@ public class UserCenterFragment extends Fragment {
                 } else {
                     Toast.makeText(getActivity(), "您的工时还没有达到50小时，暂时还不能申请证书，请继续努力哦！", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        mBtnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
+                editor.putString("token", "");
+                editor.putString("username", "");
+                editor.putString("password", "");
+                editor.apply();
+                LoginActivity.actionStart(getActivity());
+                getActivity().finish();
             }
         });
     }

@@ -1,11 +1,14 @@
 package cn.zheteng123.m_volunteer.ui.organization_center;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +23,7 @@ import cn.zheteng123.m_volunteer.entity.Result;
 import cn.zheteng123.m_volunteer.entity.organization.OrganizationEntity;
 import cn.zheteng123.m_volunteer.ui.activity_manage.ManageActivity;
 import cn.zheteng123.m_volunteer.ui.interview_manage.InterviewManageActivity;
+import cn.zheteng123.m_volunteer.ui.login.LoginActivity;
 import cn.zheteng123.m_volunteer.ui.member_manage.MemberActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 import rx.Subscriber;
@@ -47,6 +51,9 @@ public class OrganizationCenterFragment extends Fragment {
 
     @BindView(R.id.ll_interview_manage)
     LinearLayout mLlInterviewManage;
+
+    @BindView(R.id.btn_logout)
+    Button mBtnLogout;
 
     @Nullable
     @Override
@@ -106,6 +113,19 @@ public class OrganizationCenterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 InterviewManageActivity.actionStart(getActivity());
+            }
+        });
+
+        mBtnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getActivity()).edit();
+                editor.putString("token", "");
+                editor.putString("username", "");
+                editor.putString("password", "");
+                editor.apply();
+                LoginActivity.actionStart(getActivity());
+                getActivity().finish();
             }
         });
     }
