@@ -91,8 +91,7 @@ public class MemberAdapter extends BaseAdapter{
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     TextView textView = (TextView) view;
                     textView.setTextColor(Color.WHITE);
-                    if (bFirst) {
-                        bFirst = false;
+                    if (position + 1 == manageMemberEntity.getCertificateStatusId()) {
                         return;
                     }
                     Networks
